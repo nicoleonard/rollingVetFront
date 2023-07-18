@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { borrarServicio, leerServicios } from "../../helpers/queriesServicios";
 
 const AdminServicio = ({ servicio, setServicios }) => {
-    
+
     const eliminarServicio = () => {
         Swal.fire({
             title: 'Elimina el servicio de forma permanente, esta seguro?',
@@ -46,7 +46,7 @@ const AdminServicio = ({ servicio, setServicios }) => {
             <td>{servicio.ingredientes}</td>
             <td>{servicio.instrucciones}</td>
             <td className="d-flex flex-columns flex-wrap justify-content-center">
-                <Link className="btn btn-warning w-75" to={'/admin/editar-servicio/' + servicio._id}>Editar</Link>
+                <Link className="btn btn-warning w-75" to={'/admin-servicio/editar-servicio/' + servicio._id}>Editar</Link>
                 <Button className="w-75" variant="danger" onClick={eliminarServicio}>
                     Borrar
                 </Button>

@@ -23,7 +23,7 @@ const AdminServicios = () => {
         <Container fluid="true" className="px-5">
             <div className="d-flex justify-content-between align-items-center mt-5">
                 <h1 className="display-4 ">Administrador de servicios</h1>
-                <Link className="btn btn-primary" to='/admin/agregar-receta'>
+                <Link className="btn btn-primary" to='/admin-servicios/agregar-servicio'>
                     Agregar
                 </Link>
             </div>

@@ -21,7 +21,7 @@ export const leerServicios = async () => {
     }
 }
 
-export const agregarReceta = async (servicio) => {
+export const agregarServicio = async (servicio) => {
     try {
         const respuesta = await fetch(URL_servicios, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(servicio) });
         return respuesta;
@@ -30,7 +30,7 @@ export const agregarReceta = async (servicio) => {
     }
 }
 
-export const editarReceta = async (servicio, id) => {
+export const editarServicio = async (servicio, id) => {
     try {
         const respuesta = await fetch(URL_servicios + "/" + id, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(servicio) });
         return respuesta;
