@@ -1,7 +1,9 @@
 const InicioAdmin = () => {
-    return (
-            <h1>Inicio Admin</h1>
-    );
+  return (
+    <section className="container mainSection">
+      <h1>Inicio Admin</h1>
+    </section>
+  );
 };
 
 export default InicioAdmin;

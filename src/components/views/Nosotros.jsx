@@ -1,7 +1,9 @@
 const Nosotros = () => {
-    return (
-            <h1>Nosotros</h1>
-    );
+  return (
+    <section className="container mainSection">
+      <h1>Nosotros</h1>
+    </section>
+  );
 };
 
 export default Nosotros;

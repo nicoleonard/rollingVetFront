@@ -1,7 +1,9 @@
 const AdminPacientes = () => {
-    return (
-            <h1>Administrador de Pacientes</h1>
-    );
+  return (
+    <section className="container mainSection">
+      <h1>Administrador de Pacientes</h1>
+    </section>
+  );
 };
 
 export default AdminPacientes;

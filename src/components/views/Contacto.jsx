@@ -1,7 +1,9 @@
 const Contacto = () => {
-    return (
-            <h1>Contacto</h1>
-    );
+  return (
+    <section className="container mainSection">
+      <h1>Contacto</h1>
+    </section>
+  );
 };
 
 export default Contacto;

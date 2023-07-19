@@ -1,7 +1,9 @@
 const Inicio = () => {
-    return (
-            <h1>Inicio</h1>
-    );
+  return (
+    <section className="container mainSection">
+      <h1>Inicio</h1>
+    </section>
+  );
 };
 
 export default Inicio;

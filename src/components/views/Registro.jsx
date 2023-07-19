@@ -1,7 +1,9 @@
 const Registro = () => {
-    return (
-            <h1>Registro</h1>
-    );
+  return (
+    <section className="container mainSection">
+      <h1>Registro</h1>
+    </section>
+  );
 };
 
 export default Registro;
