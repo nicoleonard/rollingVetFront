@@ -1,8 +1,12 @@
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { login } from "../helpers/queries";
 
 function Login() {
+
+  login();
+  
   return (
     <Container className="mainSection">
       <Form>
