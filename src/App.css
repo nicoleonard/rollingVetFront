@@ -30,6 +30,9 @@ body{
     min-height: 100vh;
     background-image: url('../src/assets/Error.png');
   }
+  .fondo .fondoSinImagen{
+    background: #2b9f89; 
+  }
 
 #root {
   display: flex;
@@ -43,4 +46,26 @@ body{
 .fondoFooter {
   background-color: #007a66;
   color: antiquewhite;
+}
+.mainSection {
+min-height: none;
+  }
+@media (min-width: 769px) and (max-width: 1024px) {
+    .fondo {
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-color: #55c3ab;
+        padding: 20px;
+        min-height: 1vh;
+  }
+}
+  /* Estilos para dispositivos grandes */
+  @media (max-width: 768px) {
+    .fondo {
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-color: #55c3ab;
+        padding: 5px;
+        min-height: 1vh;
+  }
 }

@@ -4,7 +4,7 @@ import "../../App.css";
 
 const Error404 = () => {
   return (
-      <section className="container-fluid mainSection fondo " >
+      <section className="container-fluid mainSection fondo fondoSinImagen" >
       <div className="mb-2 btnCentrado pt-2">
         <Button href="/" variant='primary' size="lg">
           Volver
