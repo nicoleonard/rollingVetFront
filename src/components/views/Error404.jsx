@@ -1,8 +1,16 @@
+import { Button } from "react-bootstrap";
+import React from "react";
+import "../../App.css";
+
 const Error404 = () => {
   return (
-    <section className="container mainSection">
-      <h1>Error404</h1>
-    </section>
+    <body>
+      <section className="container-fluid mainSection fondo fondoGral">
+        <div align-item-center>
+          <Button variant="info">Volver</Button>
+        </div>
+      </section>
+    </body>
   );
 };
 

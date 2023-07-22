@@ -14,6 +14,7 @@ import Error404 from "./components/views/Error404";
 import AgregarPaciente from "./components/views/pacientes/AgregarPaciente";
 import EditarPaciente from "./components/views/pacientes/EditarPaciente";
 import Footer from "./components/common/Footer";
+import './App.css';
 
 function App() {
   return (
@@ -55,7 +56,7 @@ function App() {
           path="/admin-servicios"
           element={<AdminServicios></AdminServicios>}
         ></Route>
-        <Route path="*" element={<Error404></Error404>}></Route>
+        <Route path="/error404" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
