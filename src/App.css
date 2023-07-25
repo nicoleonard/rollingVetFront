@@ -1,9 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+body{
+  font-family: 'Fredoka', sans-serif;
+  font-size: 20px; 
+}
+.fuente{
+  font-family: 'Fredoka', sans-serif;
+  font-size:  20px; ;
+}
+
 #root{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: #2b9f89;
 }
 
 .mainSection{
     flex-grow: 1;
+
 }
