@@ -21,9 +21,9 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
             {
               (usuarioLogueado.nombreUsuario)?
               <>
-              <NavLink end to={'/administrador'} className={'nav-item nav-link'}>Administrador</NavLink>
-              <NavLink end to={'/admin-pacientes'} className={'nav-item nav-link'}>Administrar pacientes</NavLink>
               <NavLink end to={'/admin-turnos'} className={'nav-item nav-link'}>Administrar turnos</NavLink>
+              <NavLink end to={'/admin-usuarios'} className={'nav-item nav-link'}>Administrar usuarios</NavLink>
+              <NavLink end to={'/admin-pacientes'} className={'nav-item nav-link'}>Administrar pacientes</NavLink>
               <NavLink end to={'/admin-servicios'} className={'nav-item nav-link'}>Administrar servicios</NavLink>
               <Button variant='dark' onClick={logout}>Logout</Button>
               </>:<NavLink end to={'/login'} className={'nav-item nav-link'}>Login</NavLink>
