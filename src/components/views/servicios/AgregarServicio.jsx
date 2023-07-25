@@ -1,6 +1,6 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { AgregarServicio } from "../../helpers/queriesServicios";
+import { agregarServicio } from "../../helpers/queriesServicios";
 
 const AgregarServicio = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -23,16 +23,16 @@ const AgregarServicio = () => {
             <hr />
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group className="mb-3">
-                    <Form.Label>Nombre</Form.Label>
+                    <Form.Label>Titulo</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Ej: Peluqueria, Nutricion, UTI..."
-                        {...register("nombre", {
-                            required: "El nombre del servicio no puede estar vacio", minLength: { value: 5, message: "El nombre del servicio debe tener al menos 5 caracteres" }, maxLength: { value: 100, message: "El nombre del servicio puede tener como maximo 100 caracteres" },
+                        {...register("titulo", {
+                            required: "El titulo del servicio no puede estar vacio", minLength: { value: 5, message: "El titulo del servicio debe tener al menos 5 caracteres" }, maxLength: { value: 100, message: "El nombre del servicio puede tener como maximo 100 caracteres" },
                         })}
                     />
                     <Form.Text className="text-danger">
-                        {errors.nombre?.message}
+                        {errors.titulo?.message}
                     </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3">
@@ -56,8 +56,8 @@ const AgregarServicio = () => {
                         {...register("precio", {
                             required: "El precio del servicio no puede estar vacio",
                             min: {
-                                value: 10,
-                                message: "El precio minimo es de $10",
+                                value: 0,
+                                message: "El precio minimo es de $0",
                             },
                             max: {
                                 value: 50000,

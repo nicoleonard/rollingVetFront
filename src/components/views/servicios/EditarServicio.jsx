@@ -11,7 +11,7 @@ const EditarServicio = () => {
 
     useEffect(() => {
         leerServicio(id).then((respuesta) => {
-            setValue('nombre', respuesta.nombre)
+            setValue('titulo', respuesta.nombre)
             setValue('descripcion', respuesta.descripcion)
             setValue('precio', respuesta.precio)
         })
@@ -21,10 +21,10 @@ const EditarServicio = () => {
         console.log(servicioEditado);
         editarServicio(servicioEditado, id).then((respuesta) => {
             if (respuesta && respuesta.status === 200) {
-                Swal.fire('Servicio editado', `El servicio de ${servicioEditado.nombre} fue modificado con exito`, 'success');
+                Swal.fire('Servicio editado', `El servicio de ${servicioEditado.titulo} fue modificado con exito`, 'success');
                 reset();
             } else {
-                Swal.fire('Oops... algo salio mal', `El servicio de ${servicioEditado.nombre} no se modificó. Quizás luego`, 'error');
+                Swal.fire('Oops... algo salio mal', `El servicio de ${servicioEditado.titulo} no se modificó. Quizás luego`, 'error');
             }
         });
 
@@ -36,16 +36,16 @@ const EditarServicio = () => {
             <hr />
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group className="mb-3">
-                    <Form.Label>Nombre</Form.Label>
+                    <Form.Label>Titulo</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Ej: Peluqueria, Nutricion, UTI..."
-                        {...register("nombre", {
-                            required: "El nombre del servicio no puede estar vacio", minLength: { value: 5, message: "El nombre del servicio debe tener al menos 5 caracteres" }, maxLength: { value: 100, message: "El nombre del servicio puede tener como maximo 100 caracteres" },
+                        {...register("titulo", {
+                            required: "El titulo del servicio no puede estar vacio", minLength: { value: 5, message: "El titulo del servicio debe tener al menos 5 caracteres" }, maxLength: { value: 100, message: "El nombre del servicio puede tener como maximo 100 caracteres" },
                         })}
                     />
                     <Form.Text className="text-danger">
-                        {errors.nombre?.message}
+                        {errors.titulo?.message}
                     </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3">
