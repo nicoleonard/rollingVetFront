@@ -3,7 +3,7 @@ import "../../App.css";
 
 const Nosotros = () => {
   return (
-    <section className="container mainSection fondo fondoSinImagen">
+    <section className="container mainSection fondo fondoSinImagen fuente">
       <section class="text-center py-3">
         <h1>Nosotros</h1>
         <p class="ps-4 pe-4">
