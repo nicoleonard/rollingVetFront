@@ -1,28 +1,27 @@
 import { Button } from "react-bootstrap";
-import { borrarProducto, obtenerProductos } from "../../helpers/queries";
+import { borrar, obtenerUno } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
-const ItemPaciente = ({ producto, setProductos }) => {
+const ItemPaciente = ({ paciente, setPaciente }) => {
   const eliminarProducto = () => {
-    //todo: agregar la consulta de sweetalert para preguntar si esta seguro que quiere borrar
-    borrarProducto(producto._id).then((respuesta) => {
+    borrar(paciente._id).then((respuesta) => {
       if (respuesta && respuesta.status === 200) {
         Swal.fire(
-          "Producto eliminado",
-          `El producto ${producto.nombreProducto} fue eliminado correctamente`,
+          "Paciente eliminado",
+          `El paciente ${paciente.nombre} fue eliminado correctamente`,
           "success"
         );
-        //recargar la tabla
-        obtenerProductos().then((respuesta) => {
+
+        obtenerUno().then((respuesta) => {
           if (respuesta) {
-            setProductos(respuesta);
+            setPaciente(respuesta);
           }
         });
       } else {
         Swal.fire(
           "Ocurrio un error",
-          `El producto ${producto.nombreProducto} no pudo ser eliminado`,
+          `El paciente ${paciente.nombre} no pudo ser eliminado`,
           "error"
         );
       }
@@ -31,15 +30,20 @@ const ItemPaciente = ({ producto, setProductos }) => {
 
   return (
     <tr>
-      <td>{producto._id}</td>
-      <td>{producto.nombreProducto}</td>
-      <td>${producto.precio}</td>
-      <td>{producto.imagen}</td>
-      <td>{producto.categoria}</td>
+      <td>{paciente._id}</td>
+      <td>{paciente.nombre}</td>
+      <th>{paciente.apellido}</th>
+      <th>{paciente.email}</th>
+      <th>{paciente.teléfono}</th>
+      <th>{paciente.Dirección}</th>
+      <th>{paciente.nombreMascota}</th>
+      <th>{paciente.especie}</th>
+      <th>{paciente.raza}</th>
+
       <td>
         <Link
           className="btn btn-warning"
-          to={"/administrador/editar-producto/" + producto._id}
+          to={"/admin-paciente/editar-paciente/" + paciente._id}
         >
           Editar
         </Link>
