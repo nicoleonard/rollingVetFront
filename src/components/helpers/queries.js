@@ -18,3 +18,27 @@ export const login = async (usuario)=>{
         console.log(error)
     }
 }
+
+
+
+export const obtener = async () => {
+    try {
+      const respuesta = await fetch(URL_);
+      const lista = await respuesta.json();
+      return lista;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+  export const obtenerUno = async (_id) => {
+    try {
+      const respuesta = await fetch(URL_ + "/" + _id);
+      const paciente = await respuesta.json();
+      return paciente;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+ 

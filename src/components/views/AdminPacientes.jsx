@@ -1,7 +1,7 @@
 import { Container, Table } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import AdminPaciente from "./servicios/AdminPaciente";
+import ItemPaciente from "./servicios/AdminPaciente";
 import { leerPacientes } from "../helpers/";
 
 const AdminPacientes = () => {
@@ -23,7 +23,7 @@ const AdminPacientes = () => {
         <h1 className="display-4 ">Administrador de pacientes</h1>
         <Link
           className="btn btn-primary"
-          to="/admin-servicios/agregar-paciente"
+          to="/admin-pacientes/agregar-paciente"
         >
           Agregar
         </Link>
@@ -44,11 +44,11 @@ const AdminPacientes = () => {
         </thead>
         <tbody>
           {pacientes.map((paciente) => (
-            <AdminPaciente
+            <ItemPaciente
               paciente={paciente}
               key={paciente._id}
               setPacientes={setPacientes}
-            ></AdminPaciente>
+            ></ItemPaciente>
           ))}
         </tbody>
       </Table>
