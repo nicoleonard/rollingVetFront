@@ -1,22 +1,53 @@
-
+import { Container, Table } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import AdminPaciente from "./servicios/AdminPaciente";
+import { leerPacientes } from "../helpers/";
 
 const AdminPacientes = () => {
-  const [productos, setProductos] = useState([]);
+  const [pacientes, setPacientes] = useState([]);
 
   useEffect(() => {
-    obtenerProductos().then((respuesta) => {
+    leerPacientes().then((respuesta) => {
       if (respuesta) {
-        setProductos(respuesta);
+        setPacientes(respuesta);
       } else {
-        Swal.fire(
-          "Ocurrio un error",
-          "Intente realizar esta operacion en unos minutos",
-          "error"
-        );
+        Swal.fire("Oops...", "Intente esta operacion luego", "error");
       }
     });
   }, []);
 
-  
+  return (
+    <Container fluid="true" className="px-5">
+      <div className="d-flex justify-content-between align-items-center mt-5">
+        <h1 className="display-4 ">Administrador de pacientes</h1>
+        <Link
+          className="btn btn-primary"
+          to="/admin-servicios/agregar-paciente"
+        >
+          Agregar
+        </Link>
+      </div>
+      <hr />
+      <Table responsive striped bordered hover>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Nombre Mascota</th>
+            <th>Especie</th>
+            <th>Raza</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </Table>
+    </Container>
+  );
+};
 
 export default AdminPacientes;
