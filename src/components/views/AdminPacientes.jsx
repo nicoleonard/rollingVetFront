@@ -43,7 +43,13 @@ const AdminPacientes = () => {
           </tr>
         </thead>
         <tbody>
-         
+          {pacientes.map((paciente) => (
+            <AdminPaciente
+              paciente={paciente}
+              key={paciente._id}
+              setPacientes={setPacientes}
+            ></AdminPaciente>
+          ))}
         </tbody>
       </Table>
     </Container>
