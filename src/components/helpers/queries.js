@@ -56,3 +56,15 @@ export const obtener = async () => {
       console.log(error);
     }
   };
+  export const borrar = async (id) => {
+    try {
+      const respuesta = await fetch(URL_productos + "/" + id, {
+        method: "DELETE",
+        
+      });
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
