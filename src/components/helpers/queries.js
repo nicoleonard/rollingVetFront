@@ -68,3 +68,18 @@ export const obtener = async () => {
     }
   };
   
+  export const editar = async (producto, id) => {
+    try {
+      const respuesta = await fetch(URL_productos + "/" + id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
+        },
+        body: JSON.stringify(producto),
+      });
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+    }
+  };
