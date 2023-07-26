@@ -41,4 +41,18 @@ export const obtener = async () => {
     }
   };
   
- 
+  export const crear = async (producto) => {
+    try {
+      const respuesta = await fetch(URL_productos, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
+        },
+        body: JSON.stringify(producto),
+      });
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+    }
+  };
