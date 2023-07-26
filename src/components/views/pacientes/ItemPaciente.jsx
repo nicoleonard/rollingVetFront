@@ -35,7 +35,7 @@ const ItemPaciente = ({ paciente, setPaciente }) => {
       <th>{paciente.apellido}</th>
       <th>{paciente.email}</th>
       <th>{paciente.teléfono}</th>
-      <th>{paciente.Dirección}</th>
+      <th>{paciente.dirección}</th>
       <th>{paciente.nombreMascota}</th>
       <th>{paciente.especie}</th>
       <th>{paciente.raza}</th>
