@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import AdminUsuarios from "../views/AdminUsuarios";
-import AgregarUsuario from "../views/turnos/AgregarUsuario";
-import EditarUsuario from "../views/turnos/EditarUsuario";
+import AgregarUsuario from "../views/usuarios/AgregarUsuario";
+import EditarUsuario from "../views/usuarios/EditarUsuario";
 
 const RutasAdminUsuarios = () => {
   return (
