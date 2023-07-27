@@ -46,8 +46,8 @@ const EditarPaciente = () => {
       <h1 className="display-4 mt-5">Editar paciente</h1>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Form.Group className="mb-3" controlId="formNombreProdcuto">
-          <Form.Label>Paciente*</Form.Label>
+        <Form.Group className="mb-3" controlId="formNombre">
+          <Form.Label>Pacientes*</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: Facundo"
@@ -55,11 +55,11 @@ const EditarPaciente = () => {
               required: "El nombre del paciente es obligatorio",
               minLength: {
                 value: 2,
-                message: "La cantidad minima de caracteres es de 2 digitos",
+                message: "La cantidad minima de caracteres es de 2",
               },
               maxLength: {
-                value: 15,
-                message: "La cantidad maxima de caracteres es de 15 digitos",
+                value: 14,
+                message: "La cantidad maxima de caracteres es de 14",
               },
             })}
           />
@@ -67,7 +67,7 @@ const EditarPaciente = () => {
             {errors.nombre?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
+        <Form.Group className="mb-3" controlId="formApellido">
           <Form.Label>Apellido*</Form.Label>
           <Form.Control
             type="text"
@@ -88,125 +88,20 @@ const EditarPaciente = () => {
             {errors.apellido?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formImagen">
+        <Form.Group className="mb-3" controlId="formEmail">
           <Form.Label>Email</Form.Label>
           <Form.Control
-            type="number"
-            placeholder="Ej: 381 663 1678"
-            {...register("telefono", {
-              required: "El precio del producto es obligatorio"
+            type="email"
+            placeholder="facundocajal177@gmail.com"
+            {...register("email", {
+              required: "El email es obligatorio"
             })}
           />
           <Form.Text className="text-danger">
             {errors.email?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
-          <Form.Label>teléfono*</Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="codigo de area (381) 667 1895"
-            {...register("teléfono", {
-              required: "El telefono es obligatorio",
-              min: {
-                value: 9,
-                message: "El telefono es incorrecto",
-              },
-              max: {
-                value: 14,
-                message: "El telefono es incorrecto numeros maximos: 14",
-              },
-            })}
-          />
-          <Form.Text className="text-danger">
-            {errors.telefono?.message}
-          </Form.Text>
-        </Form.Group>
-       
-        <Form.Group className="mb-3" controlId="formPrecio">
-          <Form.Label>Dirección*</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder=""
-            {...register("Dirección", {
-              required: "Dirección obligatoria",
-            })}
-          />
-          <Form.Text className="text-danger">
-            {errors.dirección?.message}
-          </Form.Text>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
-          <Form.Label>teléfono*</Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="codigo de area (381) 667 1895"
-            {...register("teléfono", {
-              required: "El telefono es obligatorio",
-              min: {
-                value: 9,
-                message: "El telefono es incorrecto",
-              },
-              max: {
-                value: 14,
-                message: "El telefono es incorrecto numeros maximos: 14",
-              },
-            })}
-          />
-          <Form.Text className="text-danger">
-            {errors.telefono?.message}
-          </Form.Text>
-        </Form.Group>
-       
-        <Form.Group className="mb-3" controlId="formPrecio">
-          <Form.Label>Dirección*</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder=""
-            {...register("Dirección", {
-              required: "Dirección obligatoria",
-            })}
-          />
-          <Form.Text className="text-danger">
-            {errors.dirección?.message}
-          </Form.Text>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
-          <Form.Label>teléfono*</Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="codigo de area (381) 667 1895"
-            {...register("teléfono", {
-              required: "El telefono es obligatorio",
-              min: {
-                value: 9,
-                message: "El telefono es incorrecto",
-              },
-              max: {
-                value: 14,
-                message: "El telefono es incorrecto numeros maximos: 14",
-              },
-            })}
-          />
-          <Form.Text className="text-danger">
-            {errors.telefono?.message}
-          </Form.Text>
-        </Form.Group>
-       
-        <Form.Group className="mb-3" controlId="formPrecio">
-          <Form.Label>Dirección*</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder=""
-            {...register("Dirección", {
-              required: "Dirección obligatoria",
-            })}
-          />
-          <Form.Text className="text-danger">
-            {errors.dirección?.message}
-          </Form.Text>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
+        <Form.Group className="mb-3" controlId="formTeléfono">
           <Form.Label>teléfono*</Form.Label>
           <Form.Control
             type="number"
@@ -228,7 +123,7 @@ const EditarPaciente = () => {
           </Form.Text>
         </Form.Group>
        
-        <Form.Group className="mb-3" controlId="formPrecio">
+        <Form.Group className="mb-3" controlId="formDirección">
           <Form.Label>Dirección*</Form.Label>
           <Form.Control
             type="text"
@@ -241,14 +136,14 @@ const EditarPaciente = () => {
             {errors.dirección?.message}
           </Form.Text>
         </Form.Group>
-        
-        <Form.Group className="mb-3" controlId="formPrecio">
+       
+        <Form.Group className="mb-3" controlId="formNombreMascota">
           <Form.Label>Nombre de la mascota*</Form.Label>
           <Form.Control
             type="text"
             placeholder=""
             {...register("nombreMascota", {
-              required: "Dirección obligatoria",
+              required: "Nombre de la mascota obligatorio",
             })}
           />
           <Form.Text className="text-danger">
@@ -256,7 +151,7 @@ const EditarPaciente = () => {
           </Form.Text>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formPrecio">
+        <Form.Group className="mb-3" controlId="formEspecie">
           <Form.Label>Especie*</Form.Label>
           <Form.Control
             type="text"
@@ -269,7 +164,7 @@ const EditarPaciente = () => {
             {errors.especie?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
+        <Form.Group className="mb-3" controlId="formRaza">
           <Form.Label>Raza*</Form.Label>
           <Form.Control
             type="text"

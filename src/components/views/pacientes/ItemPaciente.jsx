@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const ItemPaciente = ({ paciente, setPaciente }) => {
-  const eliminarProducto = () => {
+  const eliminarPaciente = () => {
     borrar(paciente._id).then((respuesta) => {
       if (respuesta && respuesta.status === 200) {
         Swal.fire(
@@ -47,7 +47,7 @@ const ItemPaciente = ({ paciente, setPaciente }) => {
         >
           Editar
         </Link>
-        <Button variant="danger" onClick={eliminarProducto}>
+        <Button variant="danger" onClick={eliminarPaciente}>
           Borrar
         </Button>
       </td>

@@ -1,14 +1,14 @@
 import { Container, Table } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ItemPaciente from "./servicios/AdminPaciente";
-import { leerPacientes } from "../helpers/";
+import ItemPaciente from "../views/pacientes/ItemPaciente"
+import { obtener } from "../helpers/queries";
 
 const AdminPacientes = () => {
   const [pacientes, setPacientes] = useState([]);
 
   useEffect(() => {
-    leerPacientes().then((respuesta) => {
+    obtener().then((respuesta) => {
       if (respuesta) {
         setPacientes(respuesta);
       } else {
@@ -32,14 +32,14 @@ const AdminPacientes = () => {
       <Table responsive striped bordered hover>
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Email</th>
-            <th>Teléfono</th>
-            <th>Dirección</th>
-            <th>Nombre Mascota</th>
-            <th>Especie</th>
-            <th>Raza</th>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>email</th>
+            <th>teléfono</th>
+            <th>dirección</th>
+            <th>nombreMascota</th>
+            <th>especie</th>
+            <th>raza</th>
           </tr>
         </thead>
         <tbody>
