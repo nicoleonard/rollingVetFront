@@ -76,11 +76,11 @@ const EditarPaciente = () => {
               required: "El precio del paciente es obligatorio",
               minLength: {
                 value: 2,
-                message: "La cantidad minima de caracteres es de 2 digitos",
+                message: "La cantidad minima de caracteres es de 2 ",
               },
               maxLength: {
-                value: 15,
-                message: "La cantidad maxima de caracteres es de 15 digitos",
+                value: 14,
+                message: "La cantidad maxima de caracteres es de 14 ",
               },
             })}
           />
@@ -107,15 +107,7 @@ const EditarPaciente = () => {
             type="number"
             placeholder="codigo de area (381) 667 1895"
             {...register("teléfono", {
-              required: "El telefono es obligatorio",
-              min: {
-                value: 9,
-                message: "El telefono es incorrecto",
-              },
-              max: {
-                value: 14,
-                message: "El telefono es incorrecto numeros maximos: 14",
-              },
+              required: "El telefono es obligatorio"
             })}
           />
           <Form.Text className="text-danger">
@@ -129,7 +121,7 @@ const EditarPaciente = () => {
             type="text"
             placeholder=""
             {...register("Dirección", {
-              required: "Dirección obligatoria",
+              required: "Dirección obligatoria"
             })}
           />
           <Form.Text className="text-danger">
@@ -143,7 +135,7 @@ const EditarPaciente = () => {
             type="text"
             placeholder=""
             {...register("nombreMascota", {
-              required: "Nombre de la mascota obligatorio",
+              required: "Nombre de la mascota obligatorio"
             })}
           />
           <Form.Text className="text-danger">
@@ -157,7 +149,7 @@ const EditarPaciente = () => {
             type="text"
             placeholder="perro , gato, reptil, roedor, etc"
             {...register("especie", {
-              required: "especie obligatoria",
+              required: "especie obligatoria"
             })}
           />
           <Form.Text className="text-danger">

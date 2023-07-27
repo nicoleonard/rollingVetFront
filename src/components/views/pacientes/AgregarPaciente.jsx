@@ -59,11 +59,11 @@ const AgregarPaciente = () => {
               required: "El precio del paciente es obligatorio",
               minLength: {
                 value: 2,
-                message: "La cantidad minima de caracteres es de 2 digitos",
+                message: "La cantidad minima de caracteres es de 2 ",
               },
               maxLength: {
-                value: 15,
-                message: "La cantidad maxima de caracteres es de 15 digitos",
+                value: 14,
+                message: "La cantidad maxima de caracteres es de 14 ",
               },
             })}
           />
@@ -112,7 +112,7 @@ const AgregarPaciente = () => {
             type="text"
             placeholder=""
             {...register("Dirección", {
-              required: "Dirección obligatoria",
+              required: "Dirección obligatoria"
             })}
           />
           <Form.Text className="text-danger">
@@ -126,7 +126,7 @@ const AgregarPaciente = () => {
             type="text"
             placeholder=""
             {...register("nombreMascota", {
-              required: "Nombre de la mascota obligatorio",
+              required: "Nombre de la mascota obligatorio"
             })}
           />
           <Form.Text className="text-danger">
@@ -140,7 +140,7 @@ const AgregarPaciente = () => {
             type="text"
             placeholder="perro , gato, reptil, roedor, etc"
             {...register("especie", {
-              required: "especie obligatoria",
+              required: "especie obligatoria"
             })}
           />
           <Form.Text className="text-danger">
@@ -153,7 +153,7 @@ const AgregarPaciente = () => {
             type="text"
             placeholder="pitbul , siames, hámsterer, serpiente cascabel"
             {...register("raza", {
-              required: "Raza obligatoria",
+              required: "Raza obligatoria"
             })}
           />
           <Form.Text className="text-danger">
