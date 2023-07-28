@@ -14,6 +14,19 @@ a {
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
+.nosotros{
+background-color:  #40b19a;
+border-radius: 25px;
+}
+.contenedor-recuadro {
+  border: 2px solid #ccc; /* Borde de 2px de ancho y color gris */
+  padding: 10px; /* Espacio interno dentro del recuadro */
+  display: inline-block; /* Para que el recuadro se ajuste al tamaño de la imagen */
+}
+.imagen-centrada {
+  display: block; /* Hace que la imagen se centre en el contenedor */
+  margin: 0 auto; /* Centra horizontalmente la imagen dentro del contenedor */
+}
 #root{
     display: flex;
     flex-direction: column;

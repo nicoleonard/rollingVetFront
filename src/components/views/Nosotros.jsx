@@ -10,7 +10,7 @@ import Yoruichi from "../../assets/Yoruichi.jpeg";
 const Nosotros = () => {
   return (
     <section className="container mainSection fondo fondoSinImagen fuente">
-      <section className="text-center py-3">
+      <section className="nosotros text-center py-3 my-3">
         <h1>Nosotros</h1>
         <p className="ps-4 pe-4">
           Somos un grupo de estudiantes de Rolling Code unidos para crear una
@@ -22,8 +22,8 @@ const Nosotros = () => {
       </section>
       <section className="container">
         <article className="row">
-          <aside className="col-sm-6 col-md-6 col-lg-6">
-            <img src={Bayon} alt="Nico Leonard" width="100%" className="my-4" />
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
+            <img src={Bayon} alt="Nico Leonard" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
@@ -38,8 +38,8 @@ const Nosotros = () => {
 </p> 
           </aside>
           <hr />
-          <aside className="col-sm-6 col-md-6 col-lg-6">
-            <img src={Mumu} alt="Facundo Cajal" width="100%" className="my-4" />
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
+            <img src={Mumu} alt="Facundo Cajal" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
@@ -54,8 +54,8 @@ const Nosotros = () => {
 </p> 
           </aside>
           <hr />{" "}
-          <aside className="col-sm-6 col-md-6 col-lg-6">
-            <img src={Yoruichi} alt="Matias Giacobbe" width="100%" className="my-4" />
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
+            <img src={Yoruichi} alt="Matias Giacobbe" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
@@ -70,8 +70,8 @@ const Nosotros = () => {
 </p> 
           </aside>
           <hr />{" "}
-          <aside className="col-sm-6 col-md-6 col-lg-6">
-            <img src={Shura} alt="Santiago Antich" width="100%" className="my-4" />
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
+            <img src={Shura} alt="Santiago Antich" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
@@ -86,8 +86,8 @@ const Nosotros = () => {
 </p> 
           </aside>
           <hr />{" "}
-          <aside className="col-sm-6 col-md-6 col-lg-6">
-            <img src={Bonnie} alt="Laura Rota" width="100%" className="my-4" />
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
+            <img src={Bonnie} alt="Laura Rota" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
