@@ -47,7 +47,7 @@ function App() {
         }></Route>
         <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
         <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
-        <Route path="/*" element={<Error404></Error404>}></Route>
+        <Route path="/error404" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
