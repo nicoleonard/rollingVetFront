@@ -1,113 +1,105 @@
 import React from "react";
 import "../../App.css";
+import Bayon from "../../assets/Bayon.jpeg";
+import Bella from "../../assets/Bella.jpeg";
+import Bonnie from "../../assets/Bonnie.jpeg";
+import Mumu from "../../assets/Mumu.jpeg";
+import Shura from "../../assets/Shura.jpeg";
+import Yoruichi from "../../assets/Yoruichi.jpeg";
 
 const Nosotros = () => {
   return (
     <section className="container mainSection fondo fondoSinImagen fuente">
-      <section class="text-center py-3">
+      <section className="text-center py-3">
         <h1>Nosotros</h1>
-        <p class="ps-4 pe-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam numquam
-          facere ullam est magnam, soluta provident sapiente quaerat? Voluptate
-          atque nobis pariatur ea nisi alias exercitationem cupiditate omnis
-          veritatis eligendi?
+        <p className="ps-4 pe-4">
+          Somos un grupo de estudiantes de Rolling Code unidos para crear una
+          hermosa página web para una veterinaria, donde los amantes de las
+          mascotas pueden encontrar información sobre servicios de calidad,
+          expertos veterinarios y una experiencia en línea excepcional para
+          cuidar y mimar a sus adorables compañeros peludos.
         </p>
       </section>
-      <section class="container">
-        <article class="row">
-          <aside class="col-sm-6 col-md-6 col-lg-6">
-            <img src="" alt="" width="100%" class="my-4" />
+      <section className="container">
+        <article className="row">
+          <aside className="col-sm-6 col-md-6 col-lg-6">
+            <img src={Bayon} alt="Nico Leonard" width="100%" className="my-4" />
           </aside>
-          <aside class="col-sm-6 col-md-6 col-lg-6 my-4">
+          <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
-            <p></p>
-            <h5>Edad:</h5>
-            <p></p>
+            <p>Nicolas Leonard</p>
             <h5>Puesto:</h5>
-            <p>Scrum Master / backend</p>
-            <h5>Roll</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur minus consectetur repellat est eius nihil, ipsum,
-              pariatur maiores quibusdam fuga omnis ut quidem illo similique
-              veritatis itaque, blanditiis in labore?
-            </p>
+            <p>Scrum Master / fullstak developer</p>
+            <h5>GitHub</h5>
+            <p className="no-link-style"><a href="https://github.com/nicoleonard" target="_blank">💻Nicolas Leonard💻</a>
+</p> 
+            <h5>LinkedIn:</h5>
+            <p className="no-link-style"><a href="https://www.linkedin.com/in/nicolas-leonard-b94359246/" target="_blank">👨‍💻nicoleonard👨‍💻</a>
+</p> 
           </aside>
           <hr />
-          <aside class="col-sm-6 col-md-6 col-lg-6">
-            <img src="" alt="" width="100%" class="my-4" />
+          <aside className="col-sm-6 col-md-6 col-lg-6">
+            <img src={Mumu} alt="" width="100%" className="my-4" />
           </aside>
-          <aside class="col-sm-6 col-md-6 col-lg-6 my-4">
+          <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
-            <p></p>
-            <h5>Edad:</h5>
-            <p></p>
+            <p>Nicolas Leonard</p>
             <h5>Puesto:</h5>
-            <p>Scrum Master / backend</p>
-            <h5>Roll</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur minus consectetur repellat est eius nihil, ipsum,
-              pariatur maiores quibusdam fuga omnis ut quidem illo similique
-              veritatis itaque, blanditiis in labore?
-            </p>
+            <p>Scrum Master / fullstak developer</p>
+            <h5>GitHub</h5>
+            <p className="no-link-style"><a href="https://github.com/nicoleonard" target="_blank">💻Nicolas Leonard💻</a>
+</p> 
+            <h5>LinkedIn:</h5>
+            <p className="no-link-style"><a href="https://www.linkedin.com/in/nicolas-leonard-b94359246/" target="_blank">👨‍💻nicoleonard👨‍💻</a>
+</p> 
           </aside>
           <hr />{" "}
-          <aside class="col-sm-6 col-md-6 col-lg-6">
-            <img src="" alt="" width="100%" class="my-4" />
+          <aside className="col-sm-6 col-md-6 col-lg-6">
+            <img src={Yoruichi} alt="" width="100%" className="my-4" />
           </aside>
-          <aside class="col-sm-6 col-md-6 col-lg-6 my-4">
+          <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
-            <p></p>
-            <h5>Edad:</h5>
-            <p></p>
+            <p>Nicolas Leonard</p>
             <h5>Puesto:</h5>
-            <p>Scrum Master / backend</p>
-            <h5>Roll</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur minus consectetur repellat est eius nihil, ipsum,
-              pariatur maiores quibusdam fuga omnis ut quidem illo similique
-              veritatis itaque, blanditiis in labore?
-            </p>
+            <p>Scrum Master / fullstak developer</p>
+            <h5>GitHub</h5>
+            <p className="no-link-style"><a href="https://github.com/nicoleonard" target="_blank">💻Nicolas Leonard💻</a>
+</p> 
+            <h5>LinkedIn:</h5>
+            <p className="no-link-style"><a href="https://www.linkedin.com/in/nicolas-leonard-b94359246/" target="_blank">👨‍💻nicoleonard👨‍💻</a>
+</p> 
           </aside>
           <hr />{" "}
-          <aside class="col-sm-6 col-md-6 col-lg-6">
-            <img src="" alt="" width="100%" class="my-4" />
+          <aside className="col-sm-6 col-md-6 col-lg-6">
+            <img src={Shura} alt="" width="100%" className="my-4" />
           </aside>
-          <aside class="col-sm-6 col-md-6 col-lg-6 my-4">
+          <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
-            <p></p>
-            <h5>Edad:</h5>
-            <p></p>
+            <p>Nicolas Leonard</p>
             <h5>Puesto:</h5>
-            <p>Scrum Master / backend</p>
-            <h5>Roll</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur minus consectetur repellat est eius nihil, ipsum,
-              pariatur maiores quibusdam fuga omnis ut quidem illo similique
-              veritatis itaque, blanditiis in labore?
-            </p>
+            <p>Scrum Master / fullstak developer</p>
+            <h5>GitHub</h5>
+            <p className="no-link-style"><a href="https://github.com/nicoleonard" target="_blank">💻Nicolas Leonard💻</a>
+</p> 
+            <h5>LinkedIn:</h5>
+            <p className="no-link-style"><a href="https://www.linkedin.com/in/nicolas-leonard-b94359246/" target="_blank">👨‍💻nicoleonard👨‍💻</a>
+</p> 
           </aside>
           <hr />{" "}
-          <aside class="col-sm-6 col-md-6 col-lg-6">
-            <img src="" alt="" width="100%" class="my-4" />
+          <aside className="col-sm-6 col-md-6 col-lg-6">
+            <img src={Bonnie} alt="" width="100%" className="my-4" />
           </aside>
-          <aside class="col-sm-6 col-md-6 col-lg-6 my-4">
+          <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
-            <p></p>
-            <h5>Edad:</h5>
-            <p></p>
+            <p>Nicolas Leonard</p>
             <h5>Puesto:</h5>
-            <p>Scrum Master / backend</p>
-            <h5>Roll</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur minus consectetur repellat est eius nihil, ipsum,
-              pariatur maiores quibusdam fuga omnis ut quidem illo similique
-              veritatis itaque, blanditiis in labore?
-            </p>
+            <p>Scrum Master / fullstak developer</p>
+            <h5>GitHub</h5>
+            <p className="no-link-style"><a href="https://github.com/nicoleonard" target="_blank">💻Nicolas Leonard💻</a>
+</p> 
+            <h5>LinkedIn:</h5>
+            <p className="no-link-style"><a href="https://www.linkedin.com/in/nicolas-leonard-b94359246/" target="_blank">👨‍💻nicoleonard👨‍💻</a>
+</p> 
           </aside>
         </article>
       </section>
