@@ -41,8 +41,8 @@ const AgregarPaciente = () => {
                 message: "La cantidad minima de caracteres es de 2",
               },
               maxLength: {
-                value: 14,
-                message: "La cantidad maxima de caracteres es de 14",
+                value: 30,
+                message: "La cantidad maxima de caracteres es de 30",
               },
             })}
           />
@@ -56,13 +56,13 @@ const AgregarPaciente = () => {
             type="text"
             placeholder="Cajal"
             {...register("apellido", {
-              required: "El precio del paciente es obligatorio",
+              required: "El apellido del paciente es obligatorio",
               minLength: {
                 value: 2,
                 message: "La cantidad minima de caracteres es de 2 ",
               },
               maxLength: {
-                value: 14,
+                value: 30,
                 message: "La cantidad maxima de caracteres es de 14 ",
               },
             })}
@@ -77,7 +77,15 @@ const AgregarPaciente = () => {
             type="email"
             placeholder="facundocajal177@gmail.com"
             {...register("email", {
-              required: "El email es obligatorio"
+              required: "El email es obligatorio",
+              minLength: {
+                value: 4,
+                message: "La cantidad minima de caracteres es de 4 ",
+              },
+              maxLength: {
+                value: 64,
+                message: "La cantidad maxima de caracteres es de 64 ",
+              },
             })}
           />
           <Form.Text className="text-danger">
@@ -96,8 +104,8 @@ const AgregarPaciente = () => {
                 message: "El telefono es incorrecto",
               },
               max: {
-                value: 14,
-                message: "El telefono es incorrecto numeros maximos: 14",
+                value: 15,
+                message: "El telefono es incorrecto numeros maximos: 15",
               },
             })}
           />
@@ -112,7 +120,15 @@ const AgregarPaciente = () => {
             type="text"
             placeholder=""
             {...register("Dirección", {
-              required: "Dirección obligatoria"
+              required: "Dirección obligatoria",
+              min: {
+                value: 5,
+                message: "Direccion incorrecta",
+              },
+              max: {
+                value: 50,
+                message: "Direccion incorrecta",
+              },
             })}
           />
           <Form.Text className="text-danger">
@@ -126,7 +142,15 @@ const AgregarPaciente = () => {
             type="text"
             placeholder=""
             {...register("nombreMascota", {
-              required: "Nombre de la mascota obligatorio"
+              required: "Nombre de la mascota obligatorio",
+               min: {
+                value: 2,
+                message: "El Nombre de la mascota es incorrecto",
+              },
+              max: {
+                value: 30,
+                message: "El Nombre de la mascota es incorrecto ,30 caracteres maximos",
+              },
             })}
           />
           <Form.Text className="text-danger">
