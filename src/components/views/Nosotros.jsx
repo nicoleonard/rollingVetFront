@@ -39,66 +39,66 @@ const Nosotros = () => {
           </aside>
           <hr />
           <aside className="col-sm-6 col-md-6 col-lg-6">
-            <img src={Mumu} alt="" width="100%" className="my-4" />
+            <img src={Mumu} alt="Facundo Cajal" width="100%" className="my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
-            <p>Nicolas Leonard</p>
+            <p>Facundo Cajal</p>
             <h5>Puesto:</h5>
-            <p>Scrum Master / fullstak developer</p>
+            <p>Fullstak developer</p>
             <h5>GitHub</h5>
-            <p className="no-link-style"><a href="https://github.com/nicoleonard" target="_blank">💻Nicolas Leonard💻</a>
+            <p className="no-link-style"><a href="https://github.com/FacundoCajal199" target="_blank">💻Facund05💻</a>
 </p> 
             <h5>LinkedIn:</h5>
-            <p className="no-link-style"><a href="https://www.linkedin.com/in/nicolas-leonard-b94359246/" target="_blank">👨‍💻nicoleonard👨‍💻</a>
+            <p className="no-link-style"><a href="https://www.linkedin.com/in/facundo-cajal-051616214/" target="_blank">👨‍💻Facundo Cajal👨‍💻</a>
 </p> 
           </aside>
           <hr />{" "}
           <aside className="col-sm-6 col-md-6 col-lg-6">
-            <img src={Yoruichi} alt="" width="100%" className="my-4" />
+            <img src={Yoruichi} alt="Matias Giacobbe" width="100%" className="my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
-            <p>Nicolas Leonard</p>
+            <p>Matias Giacobbe</p>
             <h5>Puesto:</h5>
-            <p>Scrum Master / fullstak developer</p>
+            <p>Fullstak developer</p>
             <h5>GitHub</h5>
-            <p className="no-link-style"><a href="https://github.com/nicoleonard" target="_blank">💻Nicolas Leonard💻</a>
+            <p className="no-link-style"><a href="https://github.com/MtAgia" target="_blank">💻MtAgia💻</a>
 </p> 
             <h5>LinkedIn:</h5>
-            <p className="no-link-style"><a href="https://www.linkedin.com/in/nicolas-leonard-b94359246/" target="_blank">👨‍💻nicoleonard👨‍💻</a>
+            <p className="no-link-style"><a href="https://www.linkedin.com/in/matias-giacobbe-bbb250276/" target="_blank">👨‍💻Matias Giacobbe👨‍💻</a>
 </p> 
           </aside>
           <hr />{" "}
           <aside className="col-sm-6 col-md-6 col-lg-6">
-            <img src={Shura} alt="" width="100%" className="my-4" />
+            <img src={Shura} alt="Santiago Antich" width="100%" className="my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
-            <p>Nicolas Leonard</p>
+            <p>Santiago Antich</p>
             <h5>Puesto:</h5>
-            <p>Scrum Master / fullstak developer</p>
+            <p>Fullstak developer</p>
             <h5>GitHub</h5>
-            <p className="no-link-style"><a href="https://github.com/nicoleonard" target="_blank">💻Nicolas Leonard💻</a>
+            <p className="no-link-style"><a href="https://github.com/antich98" target="_blank">💻antich98💻</a>
 </p> 
             <h5>LinkedIn:</h5>
-            <p className="no-link-style"><a href="https://www.linkedin.com/in/nicolas-leonard-b94359246/" target="_blank">👨‍💻nicoleonard👨‍💻</a>
+            <p className="no-link-style"><a href="https://www.linkedin.com/in/santiago-antich/" target="_blank">👨‍💻Santiago Antich Llarull👨‍💻</a>
 </p> 
           </aside>
           <hr />{" "}
           <aside className="col-sm-6 col-md-6 col-lg-6">
-            <img src={Bonnie} alt="" width="100%" className="my-4" />
+            <img src={Bonnie} alt="Laura Rota" width="100%" className="my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
-            <p>Nicolas Leonard</p>
+            <p>Laura Rota</p>
             <h5>Puesto:</h5>
-            <p>Scrum Master / fullstak developer</p>
+            <p>Fullstak developer</p>
             <h5>GitHub</h5>
-            <p className="no-link-style"><a href="https://github.com/nicoleonard" target="_blank">💻Nicolas Leonard💻</a>
+            <p className="no-link-style"><a href="https://github.com/RLauraS" target="_blank">💻RLauraS💻</a>
 </p> 
             <h5>LinkedIn:</h5>
-            <p className="no-link-style"><a href="https://www.linkedin.com/in/nicolas-leonard-b94359246/" target="_blank">👨‍💻nicoleonard👨‍💻</a>
+            <p className="no-link-style"><a href="https://www.linkedin.com/in/laura-rota-51699b243/" target="_blank">👨‍💻Laura Rota👨‍💻</a>
 </p> 
           </aside>
         </article>
