@@ -1,6 +1,6 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-/* import { agregarTurno } from "../../helpers/queriesTurnos";*/
+import { agregarTurno } from "../../helpers/queriesTurnos";
 const AgregarTurno = () => {
   const {
     register,
@@ -9,18 +9,8 @@ const AgregarTurno = () => {
     reset,
   } = useForm();
 
-  const onSubmit = (nuevoTurno) => {
-    checkTimeSlotAvailability(nuevoTurno);
-};
-const checkTimeSlotAvailability = (nuevoTurno) => {
-    // Make an API call to check if the time slot is available
-    // You can use a library like Axios or fetch to make the API call
-    // Assuming the API response returns an availability status
-    const isAvailable = true;
-
-    if (isAvailable) {
-      // Proceed with submitting the form
-    agregarTurno(nuevoTurno).then((respuesta) => {
+const onSubmit = (nuevoTurno) => {    
+  agregarTurno(nuevoTurno).then((respuesta) => {
       if (respuesta && respuesta.status === 201) {
         Swal.fire(
           "Operacion exitosa",
@@ -36,16 +26,8 @@ const checkTimeSlotAvailability = (nuevoTurno) => {
         );
       }
     });
-  } else {
-    // Display error message to the user that the time slot is already booked
-    Swal.fire(
-      "Oops... algo salio mal",
-      "El horario seleccionado ya ha sido reservado, por favor elija otro horario",
-      "error"
-    );
-  }
-};
-
+  };
+  
   return (
     <Container>
       <h1 className="display-4 mt-5">Nuevo turno</h1>
@@ -56,9 +38,6 @@ const checkTimeSlotAvailability = (nuevoTurno) => {
             <Form.Select 
             {...register("horario", {
                 required: "El horario del turno no puede estar vacio",
-                validate: {
-                    isAvailable: (value) => checkTimeSlotAvailability(value),
-                }
             })}>
         <option>Seleccione su horario</option>
         <option value="1">9:00</option>
