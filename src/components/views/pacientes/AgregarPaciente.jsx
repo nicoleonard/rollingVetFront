@@ -164,7 +164,15 @@ const AgregarPaciente = () => {
             type="text"
             placeholder="perro , gato, reptil, roedor, etc"
             {...register("especie", {
-              required: "especie obligatoria"
+              required: "especie obligatoria",
+              min: {
+               value: 2,
+               message: "El Nombre de la especie es incorrecto",
+             },
+             max: {
+               value: 30,
+               message: "El Nombre de la especie es incorrecto ,30 caracteres maximos",
+             },
             })}
           />
           <Form.Text className="text-danger">
@@ -177,7 +185,15 @@ const AgregarPaciente = () => {
             type="text"
             placeholder="pitbul , siames, hámsterer, serpiente cascabel"
             {...register("raza", {
-              required: "Raza obligatoria"
+              required: "Raza obligatoria",
+              min: {
+               value: 2,
+               message: "El Nombre de la raza es incorrecto",
+             },
+             max: {
+               value: 30,
+               message: "El Nombre de la raza es incorrecto ,30 caracteres maximos",
+             },
             })}
           />
           <Form.Text className="text-danger">
