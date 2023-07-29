@@ -1,5 +1,5 @@
 import { Form, Button, Container, Card } from "react-bootstrap";
-import { login } from "../helpers/queries";
+import { login } from "../helpers/queriesUsuarios";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
