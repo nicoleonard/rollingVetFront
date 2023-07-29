@@ -22,7 +22,7 @@ const Nosotros = () => {
       </section>
       <section className="container">
         <article className="row">
-          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3">
             <img src={Bayon} alt="Nico Leonard" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
@@ -38,7 +38,7 @@ const Nosotros = () => {
 </p> 
           </aside>
           <hr />
-          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3">
             <img src={Mumu} alt="Facundo Cajal" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
@@ -54,7 +54,7 @@ const Nosotros = () => {
 </p> 
           </aside>
           <hr />{" "}
-          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3" >
             <img src={Yoruichi} alt="Matias Giacobbe" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
@@ -70,7 +70,7 @@ const Nosotros = () => {
 </p> 
           </aside>
           <hr />{" "}
-          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3">
             <img src={Shura} alt="Santiago Antich" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
@@ -86,7 +86,7 @@ const Nosotros = () => {
 </p> 
           </aside>
           <hr />{" "}
-          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3">
             <img src={Bonnie} alt="Laura Rota" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
