@@ -1,7 +1,7 @@
 
 import { Container, Table } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { leerUsuarios } from "../helpers/queries";
+import { leerUsuarios } from "../helpers/queriesUsuarios";
 import AdminUsuario from "./usuarios/AdminUsuario";
 
 const AdminUsuarios = () => {

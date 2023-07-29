@@ -1,6 +1,6 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { agregarUsuario } from "../helpers/queries";
+import { agregarUsuario } from "../helpers/queriesUsuarios";
 
 const Registro = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
