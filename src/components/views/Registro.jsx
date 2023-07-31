@@ -1,6 +1,7 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { agregarUsuario } from "../helpers/queriesUsuarios";
+import Swal from "sweetalert2";
 
 const Registro = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -8,10 +9,10 @@ const Registro = () => {
     const onSubmit = (nuevoUsuario) => {
         agregarUsuario(nuevoUsuario).then((respuesta) => {
             if (respuesta && respuesta.status === 201) {
-                Swal.fire('Usuario creado', `La cuenta ${nuevoUsuario.nombre} fue agregada al Registro de usuarios`, 'success');
+                Swal.fire('Usuario creado', `La cuenta ${nuevoUsuario.usuario} fue agregada al Registro de usuarios`, 'success');
                 reset();
             } else {
-                Swal.fire('Algo salio mal', `La cuenta ${nuevoUsuario.nombre} no pudo ser creada, quizás luego`, 'error');
+                Swal.fire('Algo salio mal', `La cuenta ${nuevoUsuario.usuario} no pudo ser creada, quizás luego`, 'error');
             }
         });
 
@@ -52,7 +53,7 @@ const Registro = () => {
                         {...register('email', { required: 'El email es necesario', pattern: { value: /\S+@\S+\.\S+/, message: 'Se debe ingresar un email valido' } })}
                     />
                     <Form.Text className="text-danger">
-                        {errors.instrucciones?.message}
+                        {errors.email?.message}
                     </Form.Text>
                 </Form.Group>
                 <Button variant="primary" type="submit">
