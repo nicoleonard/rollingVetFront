@@ -1,4 +1,4 @@
-const URL_usuarios = import.meta.env.VE_USUARIO;
+const URL_usuarios = import.meta.env.VITE_API_USUARIO;
 
 export const login = async (usuario)=>{
     try{
@@ -7,7 +7,6 @@ export const login = async (usuario)=>{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-token': JSON.parse(sessionStorage.getItem('usuario')).token
             },
             body: JSON.stringify(usuario)
         });
@@ -31,7 +30,7 @@ export const leerUsuarios = async () => {
   export const agregarUsuario = async (usuario) => {
     try {
       usuario.tipo = "usuario";
-      const respuesta = await fetch(URL_usuarios, {
+      const respuesta = await fetch(URL_usuarios + "/usuarios/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(usuario),
