@@ -17,15 +17,15 @@ import RutasAdminServicios from "./components/routes/RutasAdminServicios";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}
-  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+  const [usuarioLogeado, setUsuarioLogeado] = useState(usuario);
 
   return (
     <BrowserRouter>
-      <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
+      <Menu usuarioLogeado={usuarioLogeado} setUsuarioLogeado={setUsuarioLogeado}></Menu>
       <Routes>
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
         <Route exact path="/registro" element={<Registro></Registro>}></Route>
-        <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
+        <Route exact path="/login" element={<Login setUsuarioLogeado={setUsuarioLogeado}></Login>}></Route>
         <Route exact path="/admin-turnos/*" element={
           <RutasProtegidas>
             <RutasAdminTurnos></RutasAdminTurnos>
