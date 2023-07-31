@@ -10,29 +10,39 @@ export const leerTurnos = async () => {
     }
 }
 
-/* export const agregarServicio = async (servicio) => {
+export const leerTurno = async (id) => {
     try {
-        const respuesta = await fetch(URL_servicios, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(servicio) });
+        const respuesta = await fetch(URL_turnos + "/" + id);
+        const servicio = await respuesta.json();
+        return servicio;
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const agregarTurno = async (turno) => {
+    try {
+        const respuesta = await fetch(URL_turnos, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(turno) });
         return respuesta;
     } catch (error) {
         console.log(error)
     }
 }
 
-export const editarServicio = async (servicio, id) => {
+export const editarTurno = async (turno, id) => {
     try {
-        const respuesta = await fetch(URL_servicios + "/" + id, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(servicio) });
+        const respuesta = await fetch(URL_turnos + "/" + id, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(turno) });
         return respuesta;
     } catch (error) {
         console.log(error)
     }
 }
 
-export const borrarServicio = async (id) => {
+export const borrarTurno = async (id) => {
     try {
-        const respuesta = await fetch(URL_servicios + "/" + id, { method: "DELETE" });
+        const respuesta = await fetch(URL_turnos + "/" + id, { method: "DELETE" });
         return respuesta;
     } catch (error) {
         console.log(error)
     }
-} */
+}
