@@ -1,12 +1,12 @@
-import { Navbar, Container, Nav , Button} from "react-bootstrap";
-import { Link, NavLink, useNavigate} from 'react-router-dom';
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
-const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
+const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const navegacion = useNavigate();
 
-  const logout = ()=>{
+  const logout = () => {
     sessionStorage.removeItem('usuario');
-    setUsuarioLogueado({});
+    setUsuarioLogeado({});
     navegacion('/');
   }
   return (
@@ -17,19 +17,24 @@ const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <NavLink end to={'/'} className={'nav-item nav-link'}>Inicio</NavLink>
-            <NavLink end to={"/registro"} className={'nav-item nav-link'}>Registro</NavLink>
             {
-              (usuarioLogueado.nombreUsuario)?
-              <>
-              <NavLink end to={'/admin-turnos'} className={'nav-item nav-link'}>Administrar turnos</NavLink>
-              <NavLink end to={'/admin-usuarios'} className={'nav-item nav-link'}>Administrar usuarios</NavLink>
-              <NavLink end to={'/admin-pacientes'} className={'nav-item nav-link'}>Administrar pacientes</NavLink>
-              <NavLink end to={'/admin-servicios'} className={'nav-item nav-link'}>Administrar servicios</NavLink>
-              <Button variant='dark' onClick={logout}>Logout</Button>
-              </>:<NavLink end to={'/login'} className={'nav-item nav-link'}>Login</NavLink>
+              (usuarioLogeado.usuario && usuarioLogeado.tipo === "admin") ?
+                <>
+                  <NavLink end to={'/admin-turnos'} className={'nav-item nav-link'}>Administrar turnos</NavLink>
+                  <NavLink end to={'/admin-usuarios'} className={'nav-item nav-link'}>Administrar usuarios</NavLink>
+                  <NavLink end to={'/admin-pacientes'} className={'nav-item nav-link'}>Administrar pacientes</NavLink>
+                  <NavLink end to={'/admin-servicios'} className={'nav-item nav-link'}>Administrar servicios</NavLink>
+                  <Button className={'nav-item nav-link'} variant='dark' onClick={logout}>Logout</Button>
+                </> :
+                (usuarioLogeado.usuario && usuarioLogeado.tipo === "usuario") ?
+                  <Button className={'nav-item nav-link'} variant='primary' onClick={logout}>Logout</Button> : 
+                  <NavLink end to="/login" className={'nav-item nav-link'}>Login</NavLink>
             }
             <NavLink end to={'/nosotros'} className={'nav-item nav-link'}>Sobre nosotros</NavLink>
             <NavLink end to={'/contacto'} className={'nav-item nav-link'}>Contacto</NavLink>
+            {
+              (!usuarioLogeado.usuario) ? <NavLink end to="/registro" className={'nav-item nav-link'}>Registrarse</NavLink> : <></>
+            }
           </Nav>
         </Navbar.Collapse>
       </Container>

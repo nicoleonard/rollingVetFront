@@ -1,31 +1,66 @@
 import { Form, Button, Container, Card } from "react-bootstrap";
-import { login } from "../helpers/queries";
+import { login } from "../helpers/queriesUsuarios";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({setUsuarioLogueado}) => {
+const Login = ({setUsuarioLogeado}) => {
   const { register, handleSubmit, formState: { errors}, reset } = useForm();
   const navegacion = useNavigate();
 
+  const usuarioLogueado = JSON.parse(sessionStorage.getItem('usuario')) || null;
 
-const onSubmit = (usuario)=>{
-  login(usuario).then((respuesta)=>{
-    console.log(respuesta)
-    if(respuesta && respuesta.nombreUsuario){
-      //guardar mi usuario en session o localstorage.
-      sessionStorage.setItem('usuario', JSON.stringify(respuesta));
-      setUsuarioLogueado(respuesta);
-      navegacion('/administrador');
-    }else{
-      //mostrar un mensaje  de error
-      Swal.fire(
-        'Ocurrio un error',
-        'El email o password son erroneos',
-        'error'
-      )
+  const onSubmit = (usuario) => {
+
+    if (usuarioLogueado) {
+        Swal.fire({
+            title: 'Hay una sesion activa',
+            text: `Está logeado como ${usuario.usuario}. Desea cerrar sesion?`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#117700',
+            cancelButtonColor: '#ff2255',
+            confirmButtonText: 'Si, cerrar sesion.'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                logout()
+                setUsuarioLogeado({})
+                navegacion("/")
+                Swal.fire(
+                    'Sesion finalizada',
+                    'Tu sesion se ha cerrado con exito.',
+                    'success'
+                )
+            }
+        })
+
+    } else {
+
+        login(usuario).then((respuesta) => {
+            if (respuesta.usuario) {
+                sessionStorage.setItem('usuario', JSON.stringify(respuesta))
+                setUsuarioLogeado(respuesta);
+                Swal.fire(
+                    'Inicio de sesion exitoso', `Bienvenido, ${respuesta.usuario}`,
+                    'success'
+                )
+                if (respuesta.tipo === "admin") {
+                    navegacion("/admin-recetas")
+                } else {
+                    navegacion("/")
+                }
+
+            } else {
+                Swal.fire(
+                    'Inicio de sesion fallido',
+                    'El usuario o clave ingresados son incorrectos',
+                    'error'
+                )
+            }
+        });
     }
-  })
+
+
 }
 
   return (
@@ -56,19 +91,16 @@ const onSubmit = (usuario)=>{
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="Password"
+                placeholder="Contraseña"
                {
-                ...register('password',{
-                  required: 'El password es un dato obligatorio',
-                  pattern:{
-                    value: /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
-                    message: 'El password debe contener entre 8 y 16 caracteres y debe incluir numeros, caracteres en mayuscula, miniscula y almenos un caracter especial'
-                  }
+                ...register('clave',{
+                  required: 'La clave es un dato obligatorio',
+                  pattern:{ value: /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/, message: 'La contraseña puede tener de 8 a 64 caracteres y contiene una mezcla de mayusculas y minusculas, un numero y un caracter especial' }
                 })
                }
               />
              <Form.Text className="text-danger">
-               { errors.password?.message}
+               { errors.clave?.message}
               </Form.Text>
             </Form.Group>
             <Button variant="primary" type="submit">

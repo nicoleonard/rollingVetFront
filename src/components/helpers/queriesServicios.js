@@ -1,4 +1,4 @@
-const URL_servicios = import.meta.env.VE_SERVICIO
+const URL_servicios = import.meta.env.VITE_API_SERVICIO
 
 
 export const leerServicio = async (id) => {
