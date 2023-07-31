@@ -1,6 +1,6 @@
 import React from 'react';
-//import { Button } from "react-bootstrap";
-//import { borrarUsuario, leerUsuarios } from "../../helpers/queries";
+import { Button } from "react-bootstrap";
+import { borrarUsuario, leerUsuarios } from "../../helpers/queriesUsuarios";
 const AdminUsuario = ({ usuario, setUsuarios }) => {
   const eliminarUsuario = () => {
     Swal.fire({

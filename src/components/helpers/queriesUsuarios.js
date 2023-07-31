@@ -3,7 +3,7 @@ const URL_usuarios = import.meta.env.VE_USUARIO;
 export const login = async (usuario)=>{
     try{
         //pedir a la api la lista de usuarios
-        const respuesta = await fetch(URL_usuario,{
+        const respuesta = await fetch(URL_usuarios,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
