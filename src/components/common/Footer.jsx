@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/Logo.png";
 const Footer = () => {
   return (
-    <footer className="fondoFooter fuente">
+    <footer className="fondoFooter">
       <div className="container justify-content-space-between">
         <nav className="row">
           <Link
