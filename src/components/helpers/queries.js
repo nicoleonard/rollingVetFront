@@ -1,27 +1,7 @@
-// llamar la variable de entorno
-const URL_usuario = import.meta.env.VITE_API_USUARIO;
-
-export const login = async (usuario)=>{
-    try{
-        //pedir a la api la lista de usuarios
-        const respuesta = await fetch(URL_usuario,{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-token': JSON.parse(sessionStorage.getItem('usuario')).token
-            },
-            body: JSON.stringify(usuario)
-        });
-        const usuarioLogueado = await respuesta.json();
-        return usuarioLogueado;
-    }catch(error){
-        console.log(error)
-    }
-}
 
 
 
-export const obtener = async () => {
+export const obtenerPacientes = async () => {
     try {
       const respuesta = await fetch(URL_);
       const lista = await respuesta.json();
@@ -31,7 +11,7 @@ export const obtener = async () => {
     }
   };
   
-  export const obtenerUno = async (_id) => {
+  export const obtenerUnPaciente = async (_id) => {
     try {
       const respuesta = await fetch(URL_ + "/" + _id);
       const paciente = await respuesta.json();
@@ -41,7 +21,7 @@ export const obtener = async () => {
     }
   };
   
-  export const crear = async (producto) => {
+  export const crearPaciente = async (producto) => {
     try {
       const respuesta = await fetch(URL_productos, {
         method: "POST",
@@ -56,7 +36,7 @@ export const obtener = async () => {
       console.log(error);
     }
   };
-  export const borrar = async (id) => {
+  export const borrarPaciente = async (id) => {
     try {
       const respuesta = await fetch(URL_productos + "/" + id, {
         method: "DELETE",
@@ -68,7 +48,7 @@ export const obtener = async () => {
     }
   };
   
-  export const editar = async (producto, id) => {
+  export const editarPaciente = async (producto, id) => {
     try {
       const respuesta = await fetch(URL_productos + "/" + id, {
         method: "PUT",
