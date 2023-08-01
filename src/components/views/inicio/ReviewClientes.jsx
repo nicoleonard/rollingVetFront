@@ -4,9 +4,19 @@ const ReviewClientes = () => {
   return (
     <Container className="contenedor-recuadro mb-3">
       <h2>Reseñas de clientes</h2>
+      <hr />
+      <h3>Alfonso: </h3>
       <p>
-        Alfonso: Esta es mi veterinaria favorita. Nunca tuve problemas y siempre
+        Esta es mi veterinaria favorita. Nunca tuve problemas y siempre
         atendieron a mi caniche en tiempo y forma
+      </p>
+      <h3>Hilda: </h3>
+      <p>
+        El doctor Mariano es de lo mejor. El operó a mi perro y me dio mucha seguridad.
+      </p>
+      <h3>Romina: </h3>
+      <p>
+        Precios muy baratos!!!
       </p>
     </Container>
   );
