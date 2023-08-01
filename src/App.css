@@ -47,9 +47,6 @@ border-radius: 25px;
     min-height: 100vh;
     background-image: url('../src/assets/Error.png');
   }
-  .fondo .fondoSinImagen{
-    background: #2b9f89; 
-  }
 
 #root {
   display: flex;
@@ -57,6 +54,7 @@ border-radius: 25px;
   min-height: 100vh;
   font-family: 'Fredoka', sans-serif;
   font-size:  20px;
+  background: #2b9f89; 
 }
 
 .mainSection {
@@ -75,8 +73,6 @@ border-radius: 25px;
   height: 50vh;
   object-fit: cover;
 }
-
-
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .fondo {
