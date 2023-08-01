@@ -50,6 +50,9 @@ border-radius: 25px;
   .fondo .fondoSinImagen{
     background: #2b9f89; 
   }
+  .reviewNombre{
+    color: antiquewhite;
+  }
 
 #root {
   display: flex;
