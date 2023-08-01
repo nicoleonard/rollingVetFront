@@ -1,9 +1,82 @@
-#root{
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+body{
+  font-family: 'Fredoka', sans-serif;
+  font-size: 20px; 
+}
+.fuente{
+  font-family: 'Fredoka', sans-serif;
+  font-size:  20px; ;
+}
+.btnCentrado{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btnCentrado .btn {
+    background-color: #40b19a;
+    border: #40b19a;
+  }
+.link {
+    text-decoration: none;
+    color: rgb(248, 248, 248);
+  }
+.bi {
+    color: rgb(248, 248, 248); /* Cambia el color aquí */
+    font-size: 25px;
+  }
+  .fondo {
+    position: relative;
+    background-size: cover;
+    background-position: center;
     min-height: 100vh;
+    background-image: url('../src/assets/Error.png');
+  }
+  .fondo .fondoSinImagen{
+    background: #2b9f89; 
+  }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.mainSection{
-    flex-grow: 1;
+.mainSection {
+  flex-grow: 1;
+}
+.fondoFooter {
+  background-color: #007a66;
+  color: antiquewhite;
+}
+.mainSection {
+min-height: none;
+  }
+
+/* Componente Inicio */
+.carrouselInicio{
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .fondo {
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-color: #55c3ab;
+        padding: 20px;
+        min-height: 1vh;
+  }
+}
+  /* Estilos para dispositivos grandes */
+  @media (max-width: 768px) {
+    .fondo {
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-color: #55c3ab;
+        padding: 5px;
+        min-height: 1vh;
+  }
 }
