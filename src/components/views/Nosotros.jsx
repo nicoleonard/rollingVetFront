@@ -1,8 +1,7 @@
 import React from "react";
 import "../../App.css";
 import Bayon from "../../assets/Bayon.jpeg";
-import Bella from "../../assets/Bella.jpeg";
-import Bonnie from "../../assets/Bonnie.jpeg";
+import Bonnie from "../../assets/Bonnie.jpg";
 import Mumu from "../../assets/Mumu.jpeg";
 import Shura from "../../assets/Shura.jpeg";
 import Yoruichi from "../../assets/Yoruichi.jpeg";
