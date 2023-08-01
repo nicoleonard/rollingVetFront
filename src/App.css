@@ -7,9 +7,29 @@ body{
   font-family: 'Fredoka', sans-serif;
   font-size:  20px; ;
 }
+a {
+  text-decoration: none;
+}
+.no-link-style a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.nosotros{
+background-color:  #40b19a;
+border-radius: 25px;
+}
+.contenedor-recuadro {
+  border: 2px solid #ccc; /* Borde de 2px de ancho y color gris */
+  padding: 10px; /* Espacio interno dentro del recuadro */
+  display: inline-block; /* Para que el recuadro se ajuste al tamaño de la imagen */
+}
+.imagen-centrada {
+  display: block; /* Hace que la imagen se centre en el contenedor */
+  margin: 0 auto; /* Centra horizontalmente la imagen dentro del contenedor */
+}
 .btnCentrado{
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
     align-items: center;
 }
 .btnCentrado .btn {
@@ -39,18 +59,19 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  justify-content: center;
+    align-items: center;
 }
 
 .mainSection {
   flex-grow: 1;
+  min-height: none;
 }
 .fondoFooter {
   background-color: #007a66;
   color: antiquewhite;
 }
-.mainSection {
-min-height: none;
-  }
+
 
 /* Componente Inicio */
 .carrouselInicio{
