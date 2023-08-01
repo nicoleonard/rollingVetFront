@@ -24,8 +24,8 @@ const DatosCards = [
     contenido: "Distintas medidas y caracteristicas",
     imagen: "https://images-na.ssl-images-amazon.com/images/I/61JQuS2qtxL._SL1200_.jpg",
   },  {
-    titulo: "Card 2",
-    contenido: "Contenido de la card 2",
+    titulo: "Juguetes",
+    contenido: "Variedad de juguetes para tus mascotas",
     imagen: "https://th.bing.com/th/id/R.cdfa73a08def049c5a5b0a8b55fe90b2?rik=s6YS2laU9k3%2ftQ&pid=ImgRaw&r=0",
   }
 ];
