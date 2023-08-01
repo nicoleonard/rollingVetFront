@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate,useParams } from "react-router-dom";
-import { editar, obtenerUno } from "../../helpers/queries";
+import { editarPaciente, obtenerUnPaciente } from "../../helpers/queries";
 import Swal from "sweetalert2";
 const EditarPaciente = () => {
   
@@ -16,7 +16,7 @@ const EditarPaciente = () => {
   const {id} = useParams();
   const navegacion = useNavigate()
   useEffect(()=>{
-    obtenerUno(id).then((respuesta)=>{
+    obtenerUnPaciente(id).then((respuesta)=>{
       setValue('nombre', respuesta.nombre)
       setValue('apellido', respuesta.apellido)
       setValue('email', respuesta.email)
@@ -30,7 +30,7 @@ const EditarPaciente = () => {
 
   const onSubmit = (cargar) => {
     console.log(cargar);
-    editar(cargar,id).then(res=>{
+    editarPaciente(cargar,id).then(res=>{
       if(res && res.status === 200){
         Swal.fire("Paciente editado","El paciente fue editado correctamente","success")
         navegacion('/administrador')

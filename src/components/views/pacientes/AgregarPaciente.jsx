@@ -1,6 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crear } from "../../helpers/queriesPacientes";
+import { crearPaciente } from "../../helpers/queriesPacientes";
 import Swal from "sweetalert2";
 
 const AgregarPaciente = () => {
@@ -14,7 +14,7 @@ const AgregarPaciente = () => {
   const onSubmit = (Nuevo) => {
     console.log(Nuevo);
 //pedir a la api crear un producto
-    crear(Nuevo).then((respuesta)=>{
+    crearPaciente(Nuevo).then((respuesta)=>{
       if(respuesta && respuesta.status === 201){
         Swal.fire('Paciente creado', `El paciente ${Nuevo.nombre} fue creado correctamente`, 'success');
         reset();

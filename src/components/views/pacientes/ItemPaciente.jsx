@@ -1,11 +1,11 @@
 import { Button } from "react-bootstrap";
-import { borrar, obtenerUno } from "../../helpers/queries";
+import { borrarPaciente, obtenerUnPaciente } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const ItemPaciente = ({ paciente, setPaciente }) => {
   const eliminarPaciente = () => {
-    borrar(paciente._id).then((respuesta) => {
+    borrarPaciente(paciente._id).then((respuesta) => {
       if (respuesta && respuesta.status === 200) {
         Swal.fire(
           "Paciente eliminado",
@@ -13,7 +13,7 @@ const ItemPaciente = ({ paciente, setPaciente }) => {
           "success"
         );
 
-        obtenerUno().then((respuesta) => {
+        obtenerUnPaciente().then((respuesta) => {
           if (respuesta) {
             setPaciente(respuesta);
           }
