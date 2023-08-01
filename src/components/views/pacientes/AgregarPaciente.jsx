@@ -1,6 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crear } from "../../helpers/queries";
+import { crear } from "../../helpers/queriesPacientes";
 import Swal from "sweetalert2";
 
 const AgregarPaciente = () => {
