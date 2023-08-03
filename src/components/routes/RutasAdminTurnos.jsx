@@ -14,7 +14,7 @@ const RutasAdminTurnos = () => {
         ></Route>
         <Route
           exact
-          path="/agregar-turno/:hora/:veterinario"
+          path="/agregar-turno/:id"
           element={<AgregarTurno></AgregarTurno>}
         ></Route>
         <Route
