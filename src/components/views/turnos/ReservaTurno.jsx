@@ -1,12 +1,11 @@
 import { Card, Row, Col, Button, ListGroup } from "react-bootstrap"
 import { Link } from "react-router-dom";
-import { inicializarTurno } from "../../helpers/queriesTurnos";
+import { inicializarTurno, leerTurnos } from "../../helpers/queriesTurnos";
 import Swal from "sweetalert2";
 
 
 
-const ReservaTurno = ({ turno, hora, setTurnos }) => {
-    const formato = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const ReservaTurno = ({ turno, setTurnos }) => {
     const liberarTurno = () => {
         Swal.fire({
             title: 'Elimina la reserva del turno, esta seguro?',
@@ -19,7 +18,7 @@ const ReservaTurno = ({ turno, hora, setTurnos }) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 inicializarTurno(turno._id).then((respuesta) => {
-                    if (respuesta && respuesta.status === 201) {
+                    if (respuesta && respuesta.status === 200) {
                         Swal.fire(
                             'Se ha ido!',
                             `El turno de la fecha ${turno.fecha} a las ${turno.hora} se ha liberado`,
@@ -45,13 +44,13 @@ const ReservaTurno = ({ turno, hora, setTurnos }) => {
         if (turno.turnoLibre) {
             return (
                 <Link className="btn btn-primary" to={'/admin-turnos/agregar-turno/' + turno._id}>
-                    <p>Reserva HS{hora}</p>
+                    <p>Reserva HS {turno.hora}</p>
                 </Link>
             )
         } else {
             return (
                 <>
-                    <Card className="px-0">
+                    <Card className="px-0 h-25">
                         <Card.Header>
                             <Row>
                                 <Col>
