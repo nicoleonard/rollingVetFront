@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Container, Col, Row, Button } from "react-bootstrap";
+import { Container, Col, Row, Button, Table } from "react-bootstrap";
 import ReservaTurno from "./turnos/ReservaTurno"
+import AdminTurno from "./turnos/AdminTurno"
 import { leerTurnos, borrarTurnos, inicializarTurnos } from "../helpers/queriesTurnos";
 import Swal from "sweetalert2";
 
@@ -9,6 +10,9 @@ import Swal from "sweetalert2";
 const AdminTurnos = () => {
   const [turnos, setTurnos] = useState([]);
   const [isLoading, setLoading] = useState(false);
+
+  let hora = ["08:00", "09:00"]
+  const veterinarios = ["veterinario1", "veterinario2"]
 
   useEffect(() => {
     leerTurnos().then((respuesta) => {
@@ -25,12 +29,15 @@ const AdminTurnos = () => {
   useEffect(() => {
     if (isLoading) {
       borrarTurnos().then((respuesta) => {
+        console.log(respuesta)
         if (respuesta && respuesta.status === 200) {
-          inicializarTurnos(hora.length, veterinarios).then((respuesta) => {
+          inicializarTurnos(hora, veterinarios).then((respuesta) => {
+            console.log(respuesta)
             if (respuesta && respuesta.status === 201) {
+
               Swal.fire(
                 "Operacion exitosa!",
-                "Se ha inicializado la lista de turnos",
+                `${respuesta}`,
                 "success"
               );
               leerTurnos().then((respuesta) => {
@@ -41,7 +48,7 @@ const AdminTurnos = () => {
             } else {
               Swal.fire(
                 "Oh no! Algo salio mal...",
-                "No se pudo inicializar la lista de turnos",
+                `${respuesta}`,
                 "error"
               );
             }
@@ -49,7 +56,7 @@ const AdminTurnos = () => {
         } else {
           Swal.fire(
             "Oh no! Algo salio mal...",
-            "No se pudo borrar la lista de turnos",
+            `${respuesta}`,
             "error"
           );
         }
@@ -76,8 +83,7 @@ const AdminTurnos = () => {
     });
   };
 
-  let hora = ["8:00", "9:00", "10:00", "11:00", "12:00", "17:00", "18:00", "19:00"]
-  const veterinarios = ["veterinario1", "veterinario2"]
+
 
   return (
     <>
@@ -95,7 +101,7 @@ const AdminTurnos = () => {
             {
               turnos.map((turno) => {
                 if (turno.veterinario === veterinarios[0]) {
-                  return <ReservaTurno turno={turno} setTurnos={setTurnos} key={turno._id} hora={turno.hora}></ReservaTurno>
+                  return <ReservaTurno turno={turno} setTurnos={setTurnos} key={turno._id}></ReservaTurno>
                 }
               })
 
@@ -106,15 +112,41 @@ const AdminTurnos = () => {
             {
               turnos.map((turno) => {
                 if (turno.veterinario === veterinarios[1]) {
-                  return <ReservaTurno turno={turno} setTurnos={setTurnos} key={turno._id} hora={turno.hora}></ReservaTurno>
+                  return <ReservaTurno turno={turno} setTurnos={setTurnos} key={turno._id}></ReservaTurno>
                 }
               })
             }
           </Col>
         </Row>
-
       </Container>
-
+      <Container fluid="true" className="px-5">
+        <div className="d-flex justify-content-between align-items-center mt-5">
+          <h1 className="display-4 ">Administrador de turnos</h1>
+        </div>
+        <hr />
+        <Table responsive striped bordered hover>
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Veterinario</th>
+              <th>Usuario</th>
+              <th>Paciente</th>
+              <th>Detalle</th>
+              <th>Fecha</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              turnos.map((turno) => {
+                if (!turno.turnoLibre) {
+                  return <AdminTurno turno={turno} key={turno._id} setTurnos={setTurnos}></AdminTurno>
+                }
+              })
+            }
+          </tbody>
+        </Table>
+      </Container>
 
     </>
   );
