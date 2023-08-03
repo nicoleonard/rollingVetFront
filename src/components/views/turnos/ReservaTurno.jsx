@@ -42,7 +42,6 @@ const ReservaTurno = ({ turno, hora, setTurnos }) => {
             }
         })
     }
-        console.log(turno.turnoLibre)
         if (turno.turnoLibre) {
             return (
                 <Link className="btn btn-primary" to={'/admin-turnos/agregar-turno/' + turno._id}>

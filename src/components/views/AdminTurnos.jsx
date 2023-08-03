@@ -33,6 +33,11 @@ const AdminTurnos = () => {
                 "Se ha inicializado la lista de turnos",
                 "success"
               );
+              leerTurnos().then((respuesta) => {
+                if (respuesta) {
+                  setTurnos(respuesta);
+                }
+              })
             } else {
               Swal.fire(
                 "Oh no! Algo salio mal...",
