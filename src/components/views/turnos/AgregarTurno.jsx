@@ -17,9 +17,11 @@ const AgregarTurno = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    const fechaActual = new Date()
     leerTurno(id).then((respuesta) => {
       setValue('hora', respuesta.hora)
       setValue('veterinario',respuesta.veterinario)
+      setValue('fecha', fechaActual.toLocaleDateString("en-CA",{year: 'numeric', month: '2-digit', day: '2-digit' }))
   })
 
   }, [])
@@ -50,7 +52,8 @@ const AgregarTurno = () => {
       <h1 className="display-4 mt-5">Nuevo turno</h1>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Form.Group className="mb-3" controlId="formHorario">
+
+        <Form.Group className="mb-3">
             <Form.Label>Horario</Form.Label>
             <Form.Control type="time"
                           readOnly
@@ -62,18 +65,59 @@ const AgregarTurno = () => {
               {errors.hora?.message}
             </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formDoctor">
+
+        <Form.Group className="mb-3">
         <Form.Label>Veterinario</Form.Label>
             <Form.Control type="string"
                           readOnly
             {...register("veterinario", {
-                required: "El campo del veterinario no puede estar vacio",
+                required: "El campo de veterinario no puede estar vacio",
             })}>
             </Form.Control>
         <Form.Text className="text-danger">
             {errors.doctor?.message}
           </Form.Text>
         </Form.Group>
+
+        <Form.Group className="mb-3">
+            <Form.Label>Usuario</Form.Label>
+            <Form.Control type="string"
+                          readOnly
+            {...register("usuario", {
+                required: "El campo de usuario no puede estar vacio",
+            })}>
+            </Form.Control>
+            <Form.Text className="text-danger">
+              {errors.usuario?.message}
+            </Form.Text>
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+            <Form.Label>Paciente</Form.Label>
+            <Form.Control type="string"
+                          readOnly
+            {...register("paciente", {
+                required: "El campo de paciente no puede estar vacio",
+            })}>
+            </Form.Control>
+            <Form.Text className="text-danger">
+              {errors.paciente?.message}
+            </Form.Text>
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+            <Form.Label>Fecha</Form.Label>
+            <Form.Control type="Date"
+                          readOnly
+            {...register("fecha", {
+                required: "La fecha del turno no puede estar vacia",
+            })}>
+            </Form.Control>
+            <Form.Text className="text-danger">
+              {errors.fecha?.message}
+            </Form.Text>
+        </Form.Group>
+
         <Button variant="primary" type="submit">
           Guardar
         </Button>
