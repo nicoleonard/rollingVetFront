@@ -1,6 +1,9 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { agregarTurno } from "../../helpers/queriesTurnos";
+import { agregarTurno,leerTurno } from "../../helpers/queriesTurnos";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 const AgregarTurno = () => {
   
@@ -11,11 +14,14 @@ const AgregarTurno = () => {
     setValue,
     reset,
   } = useForm();
-  const { hora, veterinario } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-        setValue('hora', hora)
-        setValue('veterinario',veterinario)
+    leerTurno(id).then((respuesta) => {
+      setValue('hora', respuesta.hora)
+      setValue('veterinario',respuesta.veterinario)
+  })
+
   }, [])
 
 
@@ -58,7 +64,7 @@ const AgregarTurno = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formDoctor">
         <Form.Label>Veterinario</Form.Label>
-            <Form.Control type="time"
+            <Form.Control type="string"
                           readOnly
             {...register("veterinario", {
                 required: "El campo del veterinario no puede estar vacio",
