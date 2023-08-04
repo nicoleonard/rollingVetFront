@@ -9,7 +9,7 @@ import Yoruichi from "../../assets/Yoruichi.jpeg";
 
 const Nosotros = () => {
   return (
-    <section className="container mainSection fondo fondoSinImagen fuente">
+    <section className="container mainSection">
       <section className="nosotros text-center py-3 my-3">
         <h1>Nosotros</h1>
         <p className="ps-4 pe-4">
