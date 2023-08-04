@@ -2,7 +2,7 @@ import { Container, Table } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ItemPaciente from "../views/pacientes/ItemPaciente"
-import { obtenerPacientes } from "../helpers/queries";
+import { obtenerPacientes } from "../helpers/queriesPacientes";
 
 const AdminPacientes = () => {
   const [pacientes, setPacientes] = useState([]);
