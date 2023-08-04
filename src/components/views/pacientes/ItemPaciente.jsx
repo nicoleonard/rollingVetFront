@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-import { borrarPaciente, obtenerUnPaciente } from "../../helpers/queries";
+import { borrarPaciente, obtenerUnPaciente } from "../../helpers/queriesPacientes";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
