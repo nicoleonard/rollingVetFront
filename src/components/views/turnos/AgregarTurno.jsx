@@ -1,12 +1,15 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { agregarTurno,leerTurno } from "../../helpers/queriesTurnos";
+import { actualizarTurno, leerTurno } from "../../helpers/queriesTurnos";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { leerServicios } from "../../helpers/queriesServicios";
 
 const AgregarTurno = () => {
-  
+
+  const [servicios, setServicios] = useState([])
+
   const {
     register,
     handleSubmit,
@@ -20,32 +23,41 @@ const AgregarTurno = () => {
     const fechaActual = new Date()
     leerTurno(id).then((respuesta) => {
       setValue('hora', respuesta.hora)
-      setValue('veterinario',respuesta.veterinario)
-      setValue('fecha', fechaActual.toLocaleDateString("en-CA",{year: 'numeric', month: '2-digit', day: '2-digit' }))
-  })
+      setValue('veterinario', respuesta.veterinario)
+      setValue('fecha', fechaActual.toLocaleDateString("en-CA", { year: 'numeric', month: '2-digit', day: '2-digit' }))
+    })
+
+  }, [])
+
+  useEffect(() => {
+    leerServicios().then((respuesta) => {
+      setServicios(respuesta)
+    })
 
   }, [])
 
 
 
   const onSubmit = (nuevoTurno) => {
-    agregarTurno(nuevoTurno).then((respuesta) => {
-      if (respuesta && respuesta.status === 201) {
+    nuevoTurno.turnoLibre = false;
+    nuevoTurno._id = id;
+    actualizarTurno(nuevoTurno, id).then((respuesta) => {
+      if (respuesta && respuesta.status === 200) {
         Swal.fire(
           "Operacion exitosa",
-          `Se ha creado el turno ${nuevoTurno.nombre}`,
+          `Se ha creado el turno para ${nuevoTurno.veterinario} a las ${nuevoTurno.hora}`,
           "success"
         );
         reset();
       } else {
         Swal.fire(
           "Oops... algo salio mal",
-          `${nuevoTurno.nombre} no pudo ser agregado como un nuevo turno, quizás luego`,
+          `No se pudo crear el turno para ${nuevoTurno.veterinario} a las ${nuevoTurno.hora}`,
           "error"
         );
       }
     });
-};
+  };
 
   return (
     <Container>
@@ -54,68 +66,97 @@ const AgregarTurno = () => {
       <Form onSubmit={handleSubmit(onSubmit)}>
 
         <Form.Group className="mb-3">
-            <Form.Label>Horario</Form.Label>
-            <Form.Control type="time"
-                          readOnly
+          <Form.Label>Horario</Form.Label>
+          <Form.Control type="time"
+            readOnly
             {...register("hora", {
-                required: "La hora del turno no puede estar vacia",
+              required: "La hora del turno no puede estar vacia",
             })}>
-            </Form.Control>
-            <Form.Text className="text-danger">
-              {errors.hora?.message}
-            </Form.Text>
+          </Form.Control>
+          <Form.Text className="text-danger">
+            {errors.hora?.message}
+          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3">
-        <Form.Label>Veterinario</Form.Label>
-            <Form.Control type="string"
-                          readOnly
+          <Form.Label>Veterinario</Form.Label>
+          <Form.Control type="string"
+            readOnly
             {...register("veterinario", {
-                required: "El campo de veterinario no puede estar vacio",
+              required: "El campo de veterinario no puede estar vacio",
             })}>
-            </Form.Control>
-        <Form.Text className="text-danger">
+          </Form.Control>
+          <Form.Text className="text-danger">
             {errors.doctor?.message}
           </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3">
-            <Form.Label>Usuario</Form.Label>
-            <Form.Control type="string"
-                          readOnly
+          <Form.Label>Usuario</Form.Label>
+          <Form.Control type="string"
+
             {...register("usuario", {
-                required: "El campo de usuario no puede estar vacio",
+              required: "El campo de usuario no puede estar vacio",
             })}>
-            </Form.Control>
-            <Form.Text className="text-danger">
-              {errors.usuario?.message}
-            </Form.Text>
+          </Form.Control>
+          <Form.Text className="text-danger">
+            {errors.usuario?.message}
+          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3">
-            <Form.Label>Paciente</Form.Label>
-            <Form.Control type="string"
-                          readOnly
+          <Form.Label>Paciente</Form.Label>
+          <Form.Control type="string"
+
             {...register("paciente", {
-                required: "El campo de paciente no puede estar vacio",
+              required: "El campo de paciente no puede estar vacio",
             })}>
-            </Form.Control>
-            <Form.Text className="text-danger">
-              {errors.paciente?.message}
-            </Form.Text>
+          </Form.Control>
+          <Form.Text className="text-danger">
+            {errors.paciente?.message}
+          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3">
-            <Form.Label>Fecha</Form.Label>
-            <Form.Control type="Date"
-                          readOnly
+          <Form.Label>Fecha</Form.Label>
+          <Form.Control type="Date"
+            readOnly
             {...register("fecha", {
-                required: "La fecha del turno no puede estar vacia",
+              required: "La fecha del turno no puede estar vacia",
             })}>
-            </Form.Control>
-            <Form.Text className="text-danger">
-              {errors.fecha?.message}
-            </Form.Text>
+          </Form.Control>
+          <Form.Text className="text-danger">
+            {errors.fecha?.message}
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Detalles de la cita</Form.Label>
+          <Form.Control type="text"
+            {...register("detalleCita", {
+              required: "La fecha del turno no puede estar vacia",
+            })}>
+          </Form.Control>
+          <Form.Text className="text-danger">
+            {errors.detalleCita?.message}
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Select
+            {...register("servicios", {
+              required: "El campo servicios no puede estar vacio",
+            })}>
+            <option>Seleccione un servcio de la lista</option>
+            {
+              servicios.map((servicio) => {
+                return <option key={servicio._id} value={servicio.titulo}>{servicio.titulo}</option>
+              })
+            }
+          </Form.Select>
+          <Form.Text className="text-danger">
+            {errors.servicios?.message}
+          </Form.Text>
         </Form.Group>
 
         <Button variant="primary" type="submit">
