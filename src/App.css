@@ -47,6 +47,12 @@ border-radius: 25px;
     min-height: 100vh;
     background-image: url('../src/assets/Error.png');
   }
+  .fondo .fondoSinImagen{
+    background: #2b9f89; 
+  }
+  .reviewNombre{
+    color: white;
+  }
 
 #root {
   display: flex;
@@ -54,8 +60,7 @@ border-radius: 25px;
   min-height: 100vh;
   font-family: 'Fredoka', sans-serif;
   font-size:  20px;
-  background: #2b9f89; 
-}
+  background-color: #2b9f89;
 
 .mainSection {
   flex-grow: 1;
