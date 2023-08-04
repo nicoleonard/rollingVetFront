@@ -2,9 +2,9 @@ import React from "react";
 import "../../App.css";
 import Bayon from "../../assets/Bayon.jpeg";
 import Bonnie from "../../assets/Bonnie.jpg";
-import Mumu from "../../assets/Mumu.jpeg";
-import Shura from "../../assets/Shura.jpeg";
-import Yoruichi from "../../assets/Yoruichi.jpeg";
+import Facu from "../../assets/Facu.jpeg";
+import Santi from "../../assets/Santi.jpg";
+import Mati from "../../assets/Mati.jpeg";
 
 const Nosotros = () => {
   return (
@@ -38,7 +38,7 @@ const Nosotros = () => {
           </aside>
           <hr />
           <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3">
-            <img src={Mumu} alt="Facundo Cajal" width="100%" className="imagen-centrada my-4" />
+            <img src={Facu} alt="Facundo Cajal" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
@@ -54,7 +54,7 @@ const Nosotros = () => {
           </aside>
           <hr />{" "}
           <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3" >
-            <img src={Yoruichi} alt="Matias Giacobbe" width="100%" className="imagen-centrada my-4" />
+            <img src={Mati} alt="Matias Giacobbe" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
@@ -70,7 +70,7 @@ const Nosotros = () => {
           </aside>
           <hr />{" "}
           <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3">
-            <img src={Shura} alt="Santiago Antich" width="100%" className="imagen-centrada my-4" />
+            <img src={Santi} alt="Santiago Antich" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
