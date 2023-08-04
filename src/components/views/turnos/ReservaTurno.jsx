@@ -41,48 +41,54 @@ const ReservaTurno = ({ turno, setTurnos }) => {
             }
         })
     }
-        if (turno.turnoLibre) {
-            return (
-                <Link className="btn btn-primary" to={'/admin-turnos/agregar-turno/' + turno._id}>
-                    <p>Reserva HS {turno.hora}</p>
-                </Link>
-            )
-        } else {
-            return (
-                <>
-                    <Card className="px-0 h-25">
-                        <Card.Header>
-                            <Row>
-                                <Col>
-                                    <h3>{turno.veterinario}</h3>
-                                </Col>
-                                <Col>
-                                    <Row>
-                                        <p className="fs-6">{turno.paciente}</p>
-                                    </Row>
-                                    <Row>
-                                        <p className="text-secondary fw-light">{turno.usuario}</p>
-                                    </Row>
-                                </Col>
-                            </Row>
-                        </Card.Header>
-                        <Card.Body>
-                            <ListGroup className="list-group-flush">
-                                <ListGroup.Item>{turno.fecha}</ListGroup.Item>
-                                <ListGroup.Item>{turno.hora}</ListGroup.Item>
-                                <ListGroup.Item>{turno.detalleCita}</ListGroup.Item>
-                            </ListGroup>
-                        </Card.Body>
-                        <Card.Footer>
-                            <Button className="w-75" variant="danger" onClick={liberarTurno}>
-                                Borrar
-                            </Button>
-                        </Card.Footer>
-                    </Card>
-                </>
-            )
-        }
-    
+    if (turno.turnoLibre) {
+        return (
+            <>
+                <Card className="px-0 mb-1">
+                    <Link className="btn btn-primary" to={'/admin-turnos/agregar-turno/' + turno._id}>
+                        Reserva HS {turno.hora}
+                    </Link>
+                </Card>
+            </>
+        )
+    } else {
+        return (
+            <>
+                <Card className="px-0 mb-1">
+                    <Card.Header className="p-1">
+                        <Row className="p-0 w-75 mx-auto">
+                            <Col className="text-start p-0">
+                                {turno.servicios}
+                            </Col>
+                            <Col className="text-end p-0">
+                                <Button className="w-50 py-0" variant="danger" onClick={liberarTurno}>
+                                    Borrar
+                                </Button>
+                            </Col>
+                        </Row>
+                    </Card.Header>
+                    <Card.Body className="px-1 py-1 m-0">
+                        <Row className="p-0 w-75 mx-auto">
+                            <Col className="px-0">
+                                <ListGroup className="list-group-flush text-center">
+                                    <ListGroup.Item className="p-0">{turno.fecha}</ListGroup.Item>
+                                    <ListGroup.Item className="p-0">{turno.hora}</ListGroup.Item>
+                                </ListGroup>
+                            </Col>
+
+                            <Col className="px-0">
+                                <ListGroup className="list-group-flush text-center">
+                                    <ListGroup.Item className="p-0">{turno.usuario}</ListGroup.Item>
+                                    <ListGroup.Item className="p-0">{turno.paciente}</ListGroup.Item>
+                                </ListGroup>
+                            </Col>
+                        </Row>
+                    </Card.Body>
+                </Card>
+            </>
+        )
+    }
+
 };
 
 export default ReservaTurno;
