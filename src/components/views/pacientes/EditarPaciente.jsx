@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate,useParams } from "react-router-dom";
-import { editarPaciente, obtenerUnPaciente } from "../../helpers/queries";
+import { editarPaciente, obtenerUnPaciente } from "../../helpers/queriesPacientes";
 import Swal from "sweetalert2";
 const EditarPaciente = () => {
   
