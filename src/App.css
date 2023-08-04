@@ -51,7 +51,7 @@ border-radius: 25px;
     background: #2b9f89; 
   }
   .reviewNombre{
-    color: antiquewhite;
+    color: white;
   }
 
 #root {
@@ -60,6 +60,7 @@ border-radius: 25px;
   min-height: 100vh;
   font-family: 'Fredoka', sans-serif;
   font-size:  20px;
+  background-color: #2b9f89;
 }
 
 .mainSection {

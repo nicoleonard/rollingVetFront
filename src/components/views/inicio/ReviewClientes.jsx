@@ -2,22 +2,25 @@ import { Container } from "react-bootstrap";
 
 const ReviewClientes = () => {
   return (
-    <Container className="contenedor-recuadro mb-3">
-      <h2>Reseñas de clientes</h2>
+    <Container className="contenedor-recuadro mb-3 reviewNombre">
+      <h2 className="reviewNombre display-3"><b>Reseñas de clientes</b></h2>
       <hr />
-      <h3 className="reviewNombre">Alfonso: </h3>
-      <p>
+      <h3><i class="bi bi-star-fill"></i><b> Alfonso: </b></h3>
+      <p><b>
         Esta es mi veterinaria favorita. Nunca tuve problemas y siempre
-        atendieron a mi caniche en tiempo y forma
+        atendieron a mi caniche en tiempo y forma.
+        </b>
       </p>
-      <h3 className="reviewNombre">Hilda: </h3>
-      <p>
+      <hr />
+      <h3><b><i class="bi bi-star-fill"></i> Hilda: </b></h3>
+      <p><b>
         El doctor Mariano es de lo mejor. El operó a mi perro y me dio mucha seguridad.
-      </p>
-      <h3 className="reviewNombre">Romina: </h3>
-      <p>
-        Precios muy baratos!!!
-      </p>
+        </b></p>
+        <hr />
+      <h3><i class="bi bi-star-fill"></i> <b>Romina: </b></h3>
+      <p><b>
+        ¡Precios muy baratos!
+        </b></p>
     </Container>
   );
 };
