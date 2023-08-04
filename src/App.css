@@ -61,7 +61,7 @@ border-radius: 25px;
   font-family: 'Fredoka', sans-serif;
   font-size:  20px;
   background-color: #2b9f89;
-
+}
 .mainSection {
   flex-grow: 1;
   min-height: none;
