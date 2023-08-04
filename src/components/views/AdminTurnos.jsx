@@ -11,7 +11,7 @@ const AdminTurnos = () => {
   const [turnos, setTurnos] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
-  let hora = ["08:00", "09:00"]
+  let hora = ["09:00", "10:00","11:00" ,"12:00" ,"13:00" ,"14:00" ,"15:00" ,"16:00"]
   const veterinarios = ["veterinario1", "veterinario2"]
 
   useEffect(() => {
@@ -89,15 +89,16 @@ const AdminTurnos = () => {
     <>
       <h1 className='text-center'>Lista de reservas de turnos</h1>
       <hr></hr>
-      <Container>
-        <Row>
+      <Container className="mx-4 w-100 align-self-center text-center">
+
           <Button variant="danger" disabled={isLoading} onClick={!isLoading ? handleClick : null}>
             {isLoading ? 'Procesando…' : 'Inicializar Turnos'}
           </Button>
-        </Row>
+
         <Row>
-          <Col className='w-50'>
+          <Col className=' px-1 text-center'>
             <h2>Veterinario 1</h2>
+            <hr />
             {
               turnos.map((turno) => {
                 if (turno.veterinario === veterinarios[0]) {
@@ -107,8 +108,9 @@ const AdminTurnos = () => {
 
             }
           </Col>
-          <Col className='w-50'>
+          <Col className=' px-1 text-center'>
             <h2>Veterinario 2</h2>
+            <hr />
             {
               turnos.map((turno) => {
                 if (turno.veterinario === veterinarios[1]) {
