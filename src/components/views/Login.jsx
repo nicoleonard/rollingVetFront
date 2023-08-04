@@ -45,7 +45,7 @@ const Login = ({setUsuarioLogeado}) => {
                     'success'
                 )
                 if (respuesta.tipo === "admin") {
-                    navegacion("/admin-recetas")
+                    navegacion("/admin-turnos")
                 } else {
                     navegacion("/")
                 }

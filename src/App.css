@@ -51,6 +51,16 @@ body{
 .mainSection {
 min-height: none;
   }
+
+/* Componente Inicio */
+.carrouselInicio{
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+
+
 @media (min-width: 769px) and (max-width: 1024px) {
     .fondo {
         background-size: 100%;
