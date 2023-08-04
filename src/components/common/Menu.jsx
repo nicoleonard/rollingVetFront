@@ -10,7 +10,7 @@ const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
     navegacion('/');
   }
   return (
-    <Navbar bg='danger' variant='dark' expand='lg'>
+    <Navbar className="fondoFooter" variant='dark' expand='lg'>
       <Container>
         <Navbar.Brand as={Link} to="/">RollingVet</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
