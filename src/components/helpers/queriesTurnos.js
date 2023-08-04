@@ -20,16 +20,7 @@ export const leerTurno = async (id) => {
     }
 }
 
-export const agregarTurno = async (turno) => {
-    try {
-        const respuesta = await fetch(URL_turnos + "/turnos/", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(turno) });
-        return respuesta;
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-export const editarTurno = async (turno, id) => {
+export const actualizarTurno = async (turno, id) => {
     try {
         const respuesta = await fetch(URL_turnos + "/turnos/" + id, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(turno) });
         return respuesta;
