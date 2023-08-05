@@ -23,7 +23,14 @@ export const leerServicios = async () => {
 
 export const agregarServicio = async (servicio) => {
     try {
-        const respuesta = await fetch(URL_servicios, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(servicio) });
+        const respuesta = await fetch(URL_servicios, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-token": JSON.parse(sessionStorage.getItem("servicio")).token,
+          },
+          body: JSON.stringify(servicio),
+        });
         return respuesta;
     } catch (error) {
         console.log(error)
@@ -32,7 +39,14 @@ export const agregarServicio = async (servicio) => {
 
 export const editarServicio = async (servicio, id) => {
     try {
-        const respuesta = await fetch(URL_servicios + "/" + id, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(servicio) });
+        const respuesta = await fetch(URL_servicios + "/" + id, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            "x-token": JSON.parse(sessionStorage.getItem("servicio")).token,
+          },
+          body: JSON.stringify(servicio),
+        });
         return respuesta;
     } catch (error) {
         console.log(error)

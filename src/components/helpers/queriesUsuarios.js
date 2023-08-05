@@ -7,7 +7,7 @@ export const login = async (usuario)=>{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-            },
+                "x-token": JSON.parse(sessionStorage.getItem("usuarios")).token},
             body: JSON.stringify(usuario)
         });
         const usuarioLogueado = await respuesta.json();
@@ -32,7 +32,8 @@ export const leerUsuarios = async () => {
       usuario.tipo = "usuario";
       const respuesta = await fetch(URL_usuarios + "/usuarios/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json",
+      "x-token": JSON.parse(sessionStorage.getItem("usuarios")).token },
         body: JSON.stringify(usuario),
       });
       return respuesta;
