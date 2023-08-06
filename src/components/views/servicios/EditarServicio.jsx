@@ -3,6 +3,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
 import { editarServicio, leerServicio } from "../../helpers/queriesServicios";
+import Swal from "sweetalert2";
 
 
 const EditarServicio = () => {
@@ -18,7 +19,7 @@ const EditarServicio = () => {
     }, [])
 
     const onSubmit = (servicioEditado) => {
-        console.log(servicioEditado);
+        servicioEditado._id=id
         editarServicio(servicioEditado, id).then((respuesta) => {
             if (respuesta && respuesta.status === 200) {
                 Swal.fire('Servicio editado', `El servicio de ${servicioEditado.titulo} fue modificado con exito`, 'success');
