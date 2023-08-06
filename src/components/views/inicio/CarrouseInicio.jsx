@@ -9,9 +9,9 @@ const CarrouseInicio = () => {
           className="carrouselInicio"
           text="First slide"
         />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <Carousel.Caption className="text-light bg-dark opacity-75">
+          <h3>Seguridad</h3>
+          <p>Mantenemos los máximos niveles de seguridad para tu máscota.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -20,9 +20,11 @@ const CarrouseInicio = () => {
           className="carrouselInicio"
           text="Second slide"
         />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <Carousel.Caption className="text-light bg-dark opacity-75">
+          <h3>Profesionalismo</h3>
+          <p>
+            Tenemos un equipo de profesionales capacitados listos para ayudarte.
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -31,11 +33,9 @@ const CarrouseInicio = () => {
           className="carrouselInicio"
           text="Third slide"
         />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+        <Carousel.Caption className="text-light bg-dark opacity-75">
+          <h3>Compromiso</h3>
+          <p>Estamos comprometidos con el bienestar de tu mascota.</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

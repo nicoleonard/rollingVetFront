@@ -17,7 +17,7 @@ const Inicio = () => {
   return (
     <>
       <CarrouseInicio></CarrouseInicio>
-      <h2 className="text-center display-1">Productos</h2>
+      <h2 className="text-center display-1 textoAntiqueWhite">Productos</h2>
       <Container className="text-center my-5">
         <Row className="mb-4">
           {DatosCards.map((card, index) => (
@@ -32,7 +32,7 @@ const Inicio = () => {
         </Row>
       </Container>
       <Container>
-        <h1 className="display-4">Nuestros Servicios</h1>
+        <h1 className="display-4 textoAntiqueWhite">Nuestros Servicios</h1>
         <hr />
         <Row>
           {servicios && servicios.length > 0 ? (
@@ -40,7 +40,7 @@ const Inicio = () => {
               <ListaServicio key={servicio._id} servicio={servicio} />
             ))
           ) : (
-            <p>No hay servicios disponibles</p>
+            <p className="textoAntiqueWhite">No hay servicios disponibles</p>
           )}
         </Row>
       </Container>

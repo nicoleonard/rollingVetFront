@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap";
 
 const ReviewClientes = () => {
   return (
-    <Container className="contenedor-recuadro mb-3 reviewNombre">
+    <Container className="contenedor-recuadro mb-3 reviewClientes">
       <h2 className="reviewNombre display-3"><b>Reseñas de clientes</b></h2>
       <hr />
       <h3><i class="bi bi-star-fill"></i><b> Alfonso: </b></h3>
