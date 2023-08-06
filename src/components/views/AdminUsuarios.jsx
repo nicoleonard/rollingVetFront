@@ -32,6 +32,7 @@ const AdminUsuarios = () => {
             <th>Usuario</th>
             <th>Email</th>
             <th>Tipo</th>
+            <th>Opcion</th>
           </tr>
         </thead>
         <tbody>
