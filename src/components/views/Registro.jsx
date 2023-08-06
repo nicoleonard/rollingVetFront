@@ -9,10 +9,10 @@ const Registro = () => {
     const onSubmit = (nuevoUsuario) => {
         agregarUsuario(nuevoUsuario).then((respuesta) => {
             if (respuesta && respuesta.status === 201) {
-                Swal.fire('Usuario creado', `La cuenta ${nuevoUsuario.usuario} fue agregada al Registro de usuarios`, 'success');
+                Swal.fire(`${respuesta.contenido.mensaje}`, `La cuenta ${nuevoUsuario.usuario} fue agregada al Registro de usuarios`, 'success');
                 reset();
             } else {
-                Swal.fire('Algo salio mal', `La cuenta ${nuevoUsuario.usuario} no pudo ser creada, quizás luego`, 'error');
+                Swal.fire(`${respuesta.contenido.mensaje}`, `La cuenta ${nuevoUsuario.usuario} no pudo ser creada, quizás luego`, 'error');
             }
         });
 

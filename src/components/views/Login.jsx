@@ -41,7 +41,7 @@ const Login = ({setUsuarioLogeado}) => {
                 sessionStorage.setItem('usuario', JSON.stringify(respuesta))
                 setUsuarioLogeado(respuesta);
                 Swal.fire(
-                    'Inicio de sesion exitoso', `Bienvenido, ${respuesta.usuario}`,
+                    `${respuesta.mensaje}`, `Bienvenido, ${respuesta.usuario}`,
                     'success'
                 )
                 if (respuesta.tipo === "admin") {
@@ -52,8 +52,8 @@ const Login = ({setUsuarioLogeado}) => {
 
             } else {
                 Swal.fire(
-                    'Inicio de sesion fallido',
-                    'El usuario o clave ingresados son incorrectos',
+                    'Algo salio mal...',
+                    `${respuesta.mensaje}`,
                     'error'
                 )
             }
