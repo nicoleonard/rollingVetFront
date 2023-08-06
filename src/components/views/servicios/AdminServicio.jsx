@@ -1,6 +1,8 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { borrarServicio, leerServicios } from "../../helpers/queriesServicios";
+import Swal from "sweetalert2";
+
 
 const AdminServicio = ({ servicio, setServicios }) => {
 
@@ -19,7 +21,7 @@ const AdminServicio = ({ servicio, setServicios }) => {
                     if (respuesta && respuesta.status === 200) {
                         Swal.fire(
                             'Se ha ido!',
-                            `${servicio.nombre} se ha borrado exitosamente`,
+                            `${servicio.titulo} se ha borrado exitosamente`,
                             'success'
                         )
                         leerServicios().then((respuesta) => {
@@ -30,7 +32,7 @@ const AdminServicio = ({ servicio, setServicios }) => {
                     } else {
                         Swal.fire(
                             'Oh no! Algo salio mal...',
-                            `${servicio.nombre} no se pudo borrar`,
+                            `${servicio.titulo} no se pudo borrar`,
                             'error'
                         )
                     }
@@ -41,10 +43,9 @@ const AdminServicio = ({ servicio, setServicios }) => {
     }
     return (
         <tr>
-            <td>{servicio._id}</td>
-            <td>{servicio.nombre}</td>
-            <td>{servicio.ingredientes}</td>
-            <td>{servicio.instrucciones}</td>
+            <td>{servicio.titulo}</td>
+            <td>{servicio.descripcion}</td>
+            <td>{servicio.precio}</td>
             <td className="d-flex flex-columns flex-wrap justify-content-center">
                 <Link className="btn btn-warning w-75" to={'/admin-servicio/editar-servicio/' + servicio._id}>Editar</Link>
                 <Button className="w-75" variant="danger" onClick={eliminarServicio}>

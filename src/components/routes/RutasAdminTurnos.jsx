@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-/* import AdminTurnos from "../views/AdminTurnos";*/
-/* import AgregarTurno from "../views/turnos/AgregarTurno"; */
-/* import EditarTurno from "../views/turnos/EditarTurno"; */
+import AdminTurnos from "../views/AdminTurnos";
+import AgregarTurno from "../views/turnos/AgregarTurno";
+import EditarTurno from "../views/turnos/EditarTurno";
 
 const RutasAdminTurnos = () => {
   return (

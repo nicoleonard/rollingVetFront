@@ -3,6 +3,8 @@ import { Container, Table } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { leerUsuarios } from "../helpers/queriesUsuarios";
 import AdminUsuario from "./usuarios/AdminUsuario";
+import Swal from "sweetalert2";
+
 
 const AdminUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);

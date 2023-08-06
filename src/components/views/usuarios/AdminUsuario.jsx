@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from "react-bootstrap";
 import { borrarUsuario, leerUsuarios } from "../../helpers/queriesUsuarios";
+import Swal from 'sweetalert2';
+
 const AdminUsuario = ({ usuario, setUsuarios }) => {
   const eliminarUsuario = () => {
     Swal.fire({
@@ -17,7 +19,7 @@ const AdminUsuario = ({ usuario, setUsuarios }) => {
           if (respuesta && respuesta.status === 200) {
             Swal.fire(
               "Se ha ido!",
-              `El Usuario ${usuario.nombre} se ha borrado`,
+              `El Usuario ${usuario.usuario} se ha borrado`,
               "success"
             );
             leerUsuarios().then((respuesta) => {
@@ -28,7 +30,7 @@ const AdminUsuario = ({ usuario, setUsuarios }) => {
           } else {
             Swal.fire(
               "Oh no! Algo salio mal...",
-              `El usuario ${usuario.nombre} no se ha borrado`,
+              `El usuario ${usuario.usuario} no se ha borrado`,
               "error"
             );
           }

@@ -7,7 +7,7 @@ const ListaServicio = ({ servicio }) => {
             <Card className="px-1">
                 <Card.Header>
                     <h4>Servicio:</h4>
-                    <p className="text-truncate">{servicio.nombre}</p>
+                    <p className="text-truncate">{servicio.titulo}</p>
                 </Card.Header>
                 <Card.Body>
                     <h6>Descripcion:</h6>

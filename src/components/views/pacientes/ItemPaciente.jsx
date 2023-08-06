@@ -30,17 +30,14 @@ const ItemPaciente = ({ paciente, setPaciente }) => {
 
   return (
     <tr>
-      <td>{paciente._id}</td>
-      <td>{paciente.nombre}</td>
-      <th>{paciente.apellido}</th>
+      <td>{paciente.usuario}</td>
       <th>{paciente.email}</th>
-      <th>{paciente.teléfono}</th>
-      <th>{paciente.dirección}</th>
+      <th>{paciente.telefono}</th>
+      <th>{paciente.direccion}</th>
       <th>{paciente.nombreMascota}</th>
       <th>{paciente.especie}</th>
       <th>{paciente.raza}</th>
-
-      <td>
+      <td className="text-center">
         <Link
           className="btn btn-warning"
           to={"/admin-paciente/editar-paciente/" + paciente._id}

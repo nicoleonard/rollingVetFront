@@ -1,9 +1,10 @@
+const URL_pacientes = import.meta.env.VITE_API_PACIENTE
 
 
 
 export const obtenerPacientes = async () => {
     try {
-      const respuesta = await fetch(URL_);
+      const respuesta = await fetch(URL_pacientes);
       const lista = await respuesta.json();
       return lista;
     } catch (error) {
@@ -11,9 +12,9 @@ export const obtenerPacientes = async () => {
     }
   };
   
-  export const obtenerUnPaciente = async (_id) => {
+  export const obtenerUnPaciente = async (id) => {
     try {
-      const respuesta = await fetch(URL_ + "/" + _id);
+      const respuesta = await fetch(URL_pacientes + "/" + id);
       const paciente = await respuesta.json();
       return paciente;
     } catch (error) {
@@ -21,15 +22,15 @@ export const obtenerPacientes = async () => {
     }
   };
   
-  export const crearPaciente = async (producto) => {
+  export const crearPaciente = async (paciente) => {
     try {
-      const respuesta = await fetch(URL_productos, {
+      const respuesta = await fetch(URL_pacientes, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
         },
-        body: JSON.stringify(producto),
+        body: JSON.stringify(paciente),
       });
       return respuesta;
     } catch (error) {
@@ -38,7 +39,7 @@ export const obtenerPacientes = async () => {
   };
   export const borrarPaciente = async (id) => {
     try {
-      const respuesta = await fetch(URL_productos + "/" + id, {
+      const respuesta = await fetch(URL_pacientes + "/" + id, {
         method: "DELETE",
         
       });
@@ -48,15 +49,15 @@ export const obtenerPacientes = async () => {
     }
   };
   
-  export const editarPaciente = async (producto, id) => {
+  export const editarPaciente = async (paciente, id) => {
     try {
-      const respuesta = await fetch(URL_productos + "/" + id, {
+      const respuesta = await fetch(URL_pacientes + "/" + id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
           "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
         },
-        body: JSON.stringify(producto),
+        body: JSON.stringify(paciente),
       });
       return respuesta;
     } catch (error) {
