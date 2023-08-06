@@ -3,6 +3,8 @@ import { Container, Table } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { leerUsuarios } from "../helpers/queriesUsuarios";
 import AdminUsuario from "./usuarios/AdminUsuario";
+import Swal from "sweetalert2";
+
 
 const AdminUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
@@ -30,6 +32,7 @@ const AdminUsuarios = () => {
             <th>Usuario</th>
             <th>Email</th>
             <th>Tipo</th>
+            <th>Opcion</th>
           </tr>
         </thead>
         <tbody>

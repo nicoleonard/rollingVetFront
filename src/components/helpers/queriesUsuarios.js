@@ -19,7 +19,7 @@ export const login = async (usuario)=>{
 
 export const leerUsuarios = async () => {
     try {
-      const respuesta = await fetch(URL_usuarios);
+      const respuesta = await fetch(URL_usuarios + "/usuarios/");
       const usuario = await respuesta.json();
       return usuario;
     } catch (error) {
@@ -35,7 +35,7 @@ export const leerUsuarios = async () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(usuario),
       });
-      return respuesta;
+      return { status: respuesta.status, contenido: await respuesta.json()}
     } catch (error) {
       console.log(error);
     }
@@ -43,10 +43,10 @@ export const leerUsuarios = async () => {
   
   export const borrarUsuario = async (id) => {
     try {
-      const respuesta = await fetch(URL_usuarios + "/" + id, {
+      const respuesta = await fetch(URL_usuarios + "/usuarios/" + id, {
         method: "DELETE",
       });
-      return respuesta;
+      return { status: respuesta.status, contenido: await respuesta.json()};
     } catch (error) {
       console.log(error);
     }

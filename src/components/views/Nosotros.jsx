@@ -1,15 +1,14 @@
 import React from "react";
 import "../../App.css";
 import Bayon from "../../assets/Bayon.jpeg";
-import Bella from "../../assets/Bella.jpeg";
-import Bonnie from "../../assets/Bonnie.jpeg";
-import Mumu from "../../assets/Mumu.jpeg";
-import Shura from "../../assets/Shura.jpeg";
-import Yoruichi from "../../assets/Yoruichi.jpeg";
+import Bonnie from "../../assets/Bonnie.jpg";
+import Facu from "../../assets/Facu.jpeg";
+import Santi from "../../assets/Santi.jpg";
+import Mati from "../../assets/Mati.jpeg";
 
 const Nosotros = () => {
   return (
-    <section className="container mainSection">
+    <section className="container mainSection fondoSinImagen fuente">
       <section className="nosotros text-center py-3 my-3">
         <h1>Nosotros</h1>
         <p className="ps-4 pe-4">
@@ -22,7 +21,7 @@ const Nosotros = () => {
       </section>
       <section className="container">
         <article className="row">
-          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3">
             <img src={Bayon} alt="Nico Leonard" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
@@ -38,8 +37,8 @@ const Nosotros = () => {
 </p> 
           </aside>
           <hr />
-          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
-            <img src={Mumu} alt="Facundo Cajal" width="100%" className="imagen-centrada my-4" />
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3">
+            <img src={Facu} alt="Facundo Cajal" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
@@ -54,8 +53,8 @@ const Nosotros = () => {
 </p> 
           </aside>
           <hr />{" "}
-          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
-            <img src={Yoruichi} alt="Matias Giacobbe" width="100%" className="imagen-centrada my-4" />
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3" >
+            <img src={Mati} alt="Matias Giacobbe" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
@@ -70,8 +69,8 @@ const Nosotros = () => {
 </p> 
           </aside>
           <hr />{" "}
-          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
-            <img src={Shura} alt="Santiago Antich" width="100%" className="imagen-centrada my-4" />
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3">
+            <img src={Santi} alt="Santiago Antich" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">
             <h5>Nombre:</h5>
@@ -86,7 +85,7 @@ const Nosotros = () => {
 </p> 
           </aside>
           <hr />{" "}
-          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6">
+          <aside className="contenedor-recuadro col-sm-6 col-md-6 col-lg-6 mb-3">
             <img src={Bonnie} alt="Laura Rota" width="100%" className="imagen-centrada my-4" />
           </aside>
           <aside className="col-sm-6 col-md-6 col-lg-6 my-4">

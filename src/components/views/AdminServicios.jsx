@@ -31,10 +31,10 @@ const AdminServicios = () => {
             <Table responsive striped bordered hover>
                 <thead>
                     <tr>
-                        <th>Indice</th>
-                        <th>Nombre</th>
+                        <th>Titulo</th>
                         <th>Descripcion</th>
                         <th>Precio</th>
+                        <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>

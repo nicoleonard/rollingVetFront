@@ -1,5 +1,6 @@
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import logo from "../../assets/Logo.png";
 
 const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const navegacion = useNavigate();
@@ -10,8 +11,11 @@ const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
     navegacion('/');
   }
   return (
-    <Navbar bg='danger' variant='dark' expand='lg'>
+    <Navbar className="fondoFooterAndMenu" variant='dark' expand='lg'>
       <Container>
+        <Link to={'/'}>
+        <img src={logo} alt="Logo RollingVet" className="navbar-logo"/>
+        </Link>
         <Navbar.Brand as={Link} to="/">RollingVet</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
