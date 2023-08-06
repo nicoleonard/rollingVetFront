@@ -29,15 +29,12 @@ const AdminTurnos = () => {
   useEffect(() => {
     if (isLoading) {
       borrarTurnos().then((respuesta) => {
-        console.log(respuesta)
         if (respuesta && respuesta.status === 200) {
           inicializarTurnos(hora, veterinarios).then((respuesta) => {
-            console.log(respuesta)
             if (respuesta && respuesta.status === 201) {
-
               Swal.fire(
                 "Operacion exitosa!",
-                `${respuesta}`,
+                ` ${respuesta.contenido.mensaje}`,
                 "success"
               );
               leerTurnos().then((respuesta) => {
@@ -48,7 +45,7 @@ const AdminTurnos = () => {
             } else {
               Swal.fire(
                 "Oh no! Algo salio mal...",
-                `${respuesta}`,
+                `${respuesta.contenido.mensaje}`,
                 "error"
               );
             }
@@ -56,7 +53,7 @@ const AdminTurnos = () => {
         } else {
           Swal.fire(
             "Oh no! Algo salio mal...",
-            `${respuesta}`,
+            `${respuesta.contenido.mensaje}`,
             "error"
           );
         }
