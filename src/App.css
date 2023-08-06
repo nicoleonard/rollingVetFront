@@ -76,22 +76,17 @@ border-radius: 25px;
 
 .mainSection {
   flex-grow: 1;
+  min-height: none;
 }
 .fondoFooterAndMenu {
   background-color: #007a66;
   color: antiquewhite;
-}
-.mainSection {
-  min-height: none;
 }
 .navbar-logo {
   height: 5em;
   width: auto;
   margin-right: 0.5em;
 }
-flex-grow: 1;
-min-height: none;
-  }
 
 /* Componente Inicio */
 .carrouselInicio {
