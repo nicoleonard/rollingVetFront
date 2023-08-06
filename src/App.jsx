@@ -1,4 +1,3 @@
-import "./App.css";
 import Menu from "./components/common/Menu";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Registro from "./components/views/Registro";

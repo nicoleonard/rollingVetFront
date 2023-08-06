@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ItemPaciente from "../views/pacientes/ItemPaciente"
 import { obtenerPacientes } from "../helpers/queriesPacientes";
+import Swal from "sweetalert2";
+
 
 const AdminPacientes = () => {
   const [pacientes, setPacientes] = useState([]);
@@ -32,14 +34,14 @@ const AdminPacientes = () => {
       <Table responsive striped bordered hover>
         <thead>
           <tr>
-            <th>nombre</th>
-            <th>apellido</th>
-            <th>email</th>
-            <th>teléfono</th>
-            <th>dirección</th>
-            <th>nombreMascota</th>
-            <th>especie</th>
-            <th>raza</th>
+            <th>Usuario</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Paciente</th>
+            <th>Especie</th>
+            <th>Raza</th>
+            <th>Opciones</th>
           </tr>
         </thead>
         <tbody>
