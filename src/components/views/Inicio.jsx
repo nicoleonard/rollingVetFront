@@ -31,6 +31,7 @@ const Inicio = () => {
           ))}
         </Row>
       </Container>
+      <img src="https://www.whiskas.com.ar/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf2296/files/2022-12/Adult_hero_desktop-ar.png" alt="Banner Whiskas" />
       <Container>
         <h1 className="display-4 textoAntiqueWhite">Nuestros Servicios</h1>
         <hr />
