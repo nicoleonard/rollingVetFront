@@ -6,6 +6,7 @@ import { leerServicios } from "../helpers/queriesServicios";
 import ReviewClientes from "./inicio/ReviewClientes";
 import DatosCards from "./inicio/DatosCards.jsx"
 import CardInicio from "./inicio/CardInicio";
+import Profesionales from "./inicio/Profesionales";
 import PlanesInicio from "./inicio/planesInicio";
 
 const Inicio = () => {
@@ -48,6 +49,7 @@ const Inicio = () => {
       </Container>
       <PlanesInicio></PlanesInicio>
       <ReviewClientes></ReviewClientes>
+      <Profesionales></Profesionales>
     </>
   );
 };
