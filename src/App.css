@@ -1,39 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
-body{
-  font-family: 'Fredoka', sans-serif;
-  font-size: 20px; 
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap");
+body {
+  font-family: "Fredoka", sans-serif;
+  font-size: 20px;
 }
-.fuente{
-  font-family: 'Fredoka', sans-serif;
-  font-size:  20px; ;
+.fuente {
+  font-family: "Fredoka", sans-serif;
+  font-size: 20px;
 }
-.btnCentrado{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btnCentrado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btnCentrado .btn {
-    background-color: #40b19a;
-    border: #40b19a;
-  }
+  background-color: #40b19a;
+  border: #40b19a;
+}
 .link {
-    text-decoration: none;
-    color: rgb(248, 248, 248);
-  }
+  text-decoration: none;
+  color: rgb(248, 248, 248);
+}
 .bi {
-    color: rgb(248, 248, 248); /* Cambia el color aquí */
-    font-size: 25px;
-  }
-  .fondo {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    background-image: url('../src/assets/Error.png');
-  }
-  .fondo .fondoSinImagen{
-    background: #2b9f89; 
-  }
+  color: rgb(248, 248, 248); /* Cambia el color aquí */
+  font-size: 25px;
+}
+.fondo {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  background-image: url("../src/assets/Error.png");
+}
+.fondo .fondoSinImagen {
+  background: #2b9f89;
+}
 
 #root {
   display: flex;
@@ -44,39 +44,42 @@ body{
 .mainSection {
   flex-grow: 1;
 }
-.fondoFooter {
+.fondoFooterAndMenu {
   background-color: #007a66;
   color: antiquewhite;
 }
 .mainSection {
-min-height: none;
-  }
+  min-height: none;
+}
+.navbar-logo {
+  height: 5em;
+  width: auto;
+  margin-right: 0.5em;
+}
 
 /* Componente Inicio */
-.carrouselInicio{
+.carrouselInicio {
   width: 100%;
   height: 50vh;
   object-fit: cover;
 }
 
-
-
 @media (min-width: 769px) and (max-width: 1024px) {
-    .fondo {
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-color: #55c3ab;
-        padding: 20px;
-        min-height: 1vh;
+  .fondo {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #55c3ab;
+    padding: 20px;
+    min-height: 1vh;
   }
 }
-  /* Estilos para dispositivos grandes */
-  @media (max-width: 768px) {
-    .fondo {
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-color: #55c3ab;
-        padding: 5px;
-        min-height: 1vh;
+/* Estilos para dispositivos grandes */
+@media (max-width: 768px) {
+  .fondo {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #55c3ab;
+    padding: 5px;
+    min-height: 1vh;
   }
 }
