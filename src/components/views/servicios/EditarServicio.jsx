@@ -12,7 +12,7 @@ const EditarServicio = () => {
 
     useEffect(() => {
         leerServicio(id).then((respuesta) => {
-            setValue('titulo', respuesta.nombre)
+            setValue('titulo', respuesta.titulo)
             setValue('descripcion', respuesta.descripcion)
             setValue('precio', respuesta.precio)
         })
