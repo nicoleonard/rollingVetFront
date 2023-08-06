@@ -30,7 +30,7 @@ const EditarPaciente = () => {
 
   const onSubmit = (Nuevo) => {
     editarPaciente(Nuevo, id).then((respuesta) => {
-      if (respuesta && respuesta.status === 201) {
+      if (respuesta && respuesta.status === 200) {
         Swal.fire('Paciente editado', `El paciente ${Nuevo.nombreMascota} fue editado correctamente`, 'success');
         reset();
       } else {
