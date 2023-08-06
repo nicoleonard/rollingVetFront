@@ -76,7 +76,105 @@ border-radius: 25px;
   color: antiquewhite;
 }
 
+.galeria-nuestrosEspecialistas {
+  --m: 3;
+  --g: 1px;
+  --f: 0.8;
+  display: grid;
+  gap: var(--g);
+  height: 80vh;
+  grid-template-columns: repeat(var(--m), 1fr);
+}
+.galeria-nuestrosEspecialistas > img {
+  width: 0;
+  height: 0;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  transition: 350ms linear;
+}
 
+@media screen and (min-width: 993px) {
+
+  .galeria-nuestrosEspecialistas {
+    --n: 1;
+    --m: 6;
+    --g: 0px;
+    --f: 1.1;
+    display: grid;
+    gap: var(--g);
+    height: 80vh;
+    grid-template-columns: repeat(var(--m), 1fr);
+  }
+  .galeria-nuestrosEspecialistas > img {
+    filter: brightness(0.5);
+  }
+  .galeria-nuestrosEspecialistas img:hover {
+    filter: brightness(1);
+    width: calc(70vh * var(--f) / var(--n));
+    height: calc(80vw * var(--f) / var(--m));
+  }
+
+}
+
+
+@media screen and (min-width: 770px) and (max-width: 992px) {
+
+  .galeria-nuestrosEspecialistas {
+    --n: 1;
+    --m: 6;
+    --g: 0px;
+    --f: 0.9;
+    display: grid;
+    gap: var(--g);
+    height: 60vh;
+    grid-template-columns: repeat(var(--m), 1fr);
+  }
+  .galeria-nuestrosEspecialistas > img {
+    filter: brightness(0.5);
+  }
+  .galeria-nuestrosEspecialistas img:hover {
+    filter: brightness(1);
+    width: calc(50vh * var(--f) / var(--n));
+    height: calc(80vw * var(--f) / var(--m));
+  }
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 769px) {
+
+  .slider {
+    width: 150px;
+    height: 200px;
+  }
+  .slider span {
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(250px);
+  }
+  .galeria-nuestrosEspecialistas {
+    --m: 3;
+    --g: 3px;
+    display: grid;
+    height: 60vh;
+    grid-template-columns: repeat(var(--m), 1fr);
+  }
+
+}
+@media screen and (max-width: 575px) {
+
+  .slider {
+    display: none;
+  }
+  .galeria-nuestrosEspecialistas {
+    height: 50vh;
+  }
+
+}
+@media screen and (max-width: 300px) {
+
+  .galeria-nuestrosEspecialistas {
+    height: 45vh;
+  }
+}
 /* Componente Inicio */
 .carrouselInicio{
   width: 100%;

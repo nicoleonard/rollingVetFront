@@ -6,6 +6,7 @@ import { leerServicios } from "../helpers/queriesServicios";
 import ReviewClientes from "./inicio/ReviewClientes";
 import DatosCards from "./inicio/DatosCards.jsx"
 import CardInicio from "./inicio/CardInicio";
+import Profesionales from "./inicio/Profesionales";
 
 const Inicio = () => {
   const [servicios, setServicios] = useState([]);
@@ -45,6 +46,7 @@ const Inicio = () => {
         </Row>
       </Container>
       <ReviewClientes></ReviewClientes>
+      <Profesionales></Profesionales>
     </>
   );
 };
