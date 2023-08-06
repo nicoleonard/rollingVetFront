@@ -7,6 +7,7 @@ import ReviewClientes from "./inicio/ReviewClientes";
 import DatosCards from "./inicio/DatosCards.jsx"
 import CardInicio from "./inicio/CardInicio";
 import Profesionales from "./inicio/Profesionales";
+import PlanesInicio from "./inicio/planesInicio";
 
 const Inicio = () => {
   const [servicios, setServicios] = useState([]);
@@ -32,6 +33,7 @@ const Inicio = () => {
           ))}
         </Row>
       </Container>
+      <img src="https://www.whiskas.com.ar/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf2296/files/2022-12/Adult_hero_desktop-ar.png" alt="Banner Whiskas" />
       <Container>
         <h1 className="display-4 textoAntiqueWhite">Nuestros Servicios</h1>
         <hr />
@@ -45,6 +47,7 @@ const Inicio = () => {
           )}
         </Row>
       </Container>
+      <PlanesInicio></PlanesInicio>
       <ReviewClientes></ReviewClientes>
       <Profesionales></Profesionales>
     </>
