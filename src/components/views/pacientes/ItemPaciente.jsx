@@ -40,7 +40,7 @@ const ItemPaciente = ({ paciente, setPaciente }) => {
       <td className="text-center">
         <Link
           className="btn btn-warning"
-          to={"/admin-paciente/editar-paciente/" + paciente._id}
+          to={"/admin-pacientes/editar-paciente/" + paciente._id}
         >
           Editar
         </Link>
