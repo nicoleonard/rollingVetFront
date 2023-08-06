@@ -20,8 +20,8 @@ const AdminTurno = ({ turno, setTurnos }) => {
                 inicializarTurno(turno._id).then((respuesta) => {
                     if (respuesta && respuesta.status === 200) {
                         Swal.fire(
-                            'Se ha ido!',
-                            `El turno de la fecha ${turno.fecha} a las ${turno.hora} se ha liberado`,
+                            `${respuesta.contenido.mensaje}`,
+                            `Fecha: ${turno.fecha} Hora: ${turno.hora} se ha liberado`,
                             'success'
                         )
                         leerTurnos().then((respuesta) => {
@@ -30,7 +30,7 @@ const AdminTurno = ({ turno, setTurnos }) => {
                     } else {
                         Swal.fire(
                             'Oh no! Algo salio mal...',
-                            `No se elimino la reserva del turno de la fecha ${turno.fecha} a las ${turno.hora}`,
+                            `${respuesta.contenido.mensaje}`,
                             'error'
                         )
                     }

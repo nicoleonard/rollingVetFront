@@ -35,7 +35,7 @@ export const leerUsuarios = async () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(usuario),
       });
-      return respuesta;
+      return { status: respuesta.status, contenido: await respuesta.json()}
     } catch (error) {
       console.log(error);
     }
@@ -46,7 +46,7 @@ export const leerUsuarios = async () => {
       const respuesta = await fetch(URL_usuarios + "/usuarios/" + id, {
         method: "DELETE",
       });
-      return respuesta;
+      return { status: respuesta.status, contenido: await respuesta.json()};
     } catch (error) {
       console.log(error);
     }

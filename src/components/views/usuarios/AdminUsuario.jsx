@@ -18,8 +18,8 @@ const AdminUsuario = ({ usuario, setUsuarios }) => {
         borrarUsuario(usuario._id).then((respuesta) => {
           if (respuesta && respuesta.status === 200) {
             Swal.fire(
-              "Se ha ido!",
-              `El Usuario ${usuario.usuario} se ha borrado`,
+              `Adios ${usuario.usuario}`,
+              `${respuesta.contenido.mensaje}`,
               "success"
             );
             leerUsuarios().then((respuesta) => {
@@ -30,7 +30,7 @@ const AdminUsuario = ({ usuario, setUsuarios }) => {
           } else {
             Swal.fire(
               "Oh no! Algo salio mal...",
-              `El usuario ${usuario.usuario} no se ha borrado`,
+              `${respuesta.contenido.mensaje}`,
               "error"
             );
           }

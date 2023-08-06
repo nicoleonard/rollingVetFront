@@ -32,7 +32,7 @@ export const actualizarTurno = async (turno, id) => {
 export const inicializarTurno = async (id) => {
     try {
         const respuesta = await fetch(URL_turnos + "/" + id, { method: "PUT" });
-        return respuesta;
+        return { status: respuesta.status, contenido: await respuesta.json()}
     } catch (error) {
         console.log(error)
     }
