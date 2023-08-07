@@ -48,7 +48,6 @@ a {
     position: relative;
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
     background: #2b9f89;
     background-image: url('../src/assets/Error.png');
   }
