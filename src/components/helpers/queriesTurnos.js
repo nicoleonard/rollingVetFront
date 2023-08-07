@@ -24,8 +24,9 @@ export const actualizarTurno = async (turno, id) => {
   try {
     const respuesta = await fetch(URL_turnos + "/turnos/" + id, {
       method: "PUT",
-      headers: { "Content-Type": "application/json"
-    },
+      headers: { "Content-Type": "application/json",
+      "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
+  },
       body: JSON.stringify(turno),
     });
     return respuesta;
@@ -36,7 +37,9 @@ export const actualizarTurno = async (turno, id) => {
 
 export const inicializarTurno = async (id) => {
   try {
-    const respuesta = await fetch(URL_turnos + "/" + id, { method: "PUT" });
+    const respuesta = await fetch(URL_turnos + "/" + id, { method: "PUT", headers: { "Content-Type": "application/json",
+    "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
+}});
     return { status: respuesta.status, contenido: await respuesta.json() };
   } catch (error) {
     console.log(error);
@@ -46,6 +49,9 @@ export const borrarTurnos = async () => {
   try {
     const respuesta = await fetch(URL_turnos + "/turnos/", {
       method: "DELETE",
+      headers: { "Content-Type": "application/json",
+      "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
+  }
     });
     return { status: respuesta.status, contenido: await respuesta.json() };
   } catch (error) {
@@ -57,7 +63,9 @@ export const inicializarTurnos = async (horarios, veterinarios) => {
   try {
     const respuesta = await fetch(URL_turnos + "/", {
       method: "POST",
-      headers: { "Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json",
+      "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
+    },
       body: JSON.stringify({ horarios, veterinarios }),
     });
     return { status: respuesta.status, contenido: await respuesta.json() };
