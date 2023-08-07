@@ -60,7 +60,7 @@ const AgregarTurno = () => {
   };
 
   return (
-    <Container>
+    <Container className="card ms-auto my-4 p-4 bg-light bg-opacity-75">
       <h1 className="display-4 mt-5">Nuevo turno</h1>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)}>
@@ -159,7 +159,7 @@ const AgregarTurno = () => {
           </Form.Text>
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" className="my-3">
           Guardar
         </Button>
       </Form>
