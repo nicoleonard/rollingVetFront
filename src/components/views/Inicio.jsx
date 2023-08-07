@@ -19,9 +19,12 @@ const Inicio = () => {
   return (
     <>
       <CarrouseInicio></CarrouseInicio>
-      <h2 className="text-center display-1 textoAntiqueWhite">Productos</h2>
-      <Container className="text-center my-5">
-        <Row className="mb-4">
+      <Container className="my-4 w-100 mx-auto card bg-opacity-75 bg-success px-5">
+        <Container className="bg-success card mt-3">
+      <h2 className="text-center display-1 text-light mb-3">Productos</h2>
+      </Container>
+      <hr />
+        <Row className="my-4">
           {DatosCards.map((card, index) => (
             <Col key={index} lg={4} md={6} xs={12} className="d-flex justify-content-center">
               <CardInicio
@@ -33,11 +36,11 @@ const Inicio = () => {
           ))}
         </Row>
       </Container>
-      <img src="https://www.whiskas.com.ar/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf2296/files/2022-12/Adult_hero_desktop-ar.png" alt="Banner Whiskas" />
-      <Container>
-        <h1 className="display-4 textoAntiqueWhite">Nuestros Servicios</h1>
+      <img src="https://www.vitalcan.com/wp-content/uploads/2022/06/banner-slider_nutrique-home_v2.jpg" alt="Alimento Nutrique" />
+      <Container className="my-4 w-100 mx-auto card bg-opacity-75 bg-success px-5">
+        <h1 className="display-4 textoAntiqueWhite mt-3 text-center">Nuestros Servicios</h1>
         <hr />
-        <Row>
+        <Row className="mb-3">
           {servicios && servicios.length > 0 ? (
             servicios.map((servicio) => (
               <ListaServicio key={servicio._id} servicio={servicio} />

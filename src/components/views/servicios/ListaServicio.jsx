@@ -4,7 +4,7 @@ const ListaServicio = ({ servicio }) => {
 
     return (
         <>
-            <Card className="px-1">
+            <Card className="px-1 my-2 text-center">
                 <Card.Header>
                     <h4>Servicio:</h4>
                     <p className="text-truncate">{servicio.titulo}</p>
