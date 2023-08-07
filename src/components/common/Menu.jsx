@@ -14,7 +14,7 @@ const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
     <Navbar className="fondoFooterAndMenu" variant='dark' expand='lg'>
       <Container>
         <Link to={'/'}>
-        <img src={logo} alt="Logo RollingVet" className="navbar-logo"/>
+          <img src={logo} alt="Logo RollingVet" className="navbar-logo" />
         </Link>
         <Navbar.Brand as={Link} to="/">RollingVet</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -31,7 +31,10 @@ const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
                   <Button className={'nav-item nav-link'} variant='dark' onClick={logout}>Logout</Button>
                 </> :
                 (usuarioLogeado.usuario && usuarioLogeado.tipo === "usuario") ?
-                  <Button className={'nav-item nav-link'} variant='primary' onClick={logout}>Logout</Button> : 
+                  <>
+                    <NavLink end to="/reserva-turnos" className={'nav-item nav-link'}>Reserva de turnos</NavLink>
+                    <Button className={'nav-item nav-link'} variant='primary' onClick={logout}>Logout</Button>
+                  </> :
                   <NavLink end to="/login" className={'nav-item nav-link'}>Login</NavLink>
             }
             <NavLink end to={'/nosotros'} className={'nav-item nav-link'}>Sobre nosotros</NavLink>
