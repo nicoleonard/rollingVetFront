@@ -70,7 +70,7 @@ const AdminTurnos = () => {
       text: "Todos los turnos del dia seran liberados!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#117700",
+      confirmButtonColor: "#2b9f89",
       cancelButtonColor: "#ff2255",
       confirmButtonText: "Si, borrar",
     }).then((result) => {
@@ -85,7 +85,7 @@ const AdminTurnos = () => {
   return (
     <>
 
-      <Container className="my-4 w-100 mx-auto text-center card p-4 bg-light bg-opacity-75">
+      <Container className="my-4 w-100 mx-auto text-center card p-4 bg-light bg-opacity-75 min-vh-100">
       <h1 className='text-center'>Lista de reservas de turnos</h1>
       <hr></hr>
           <Button className="my-2" variant="danger" disabled={isLoading} onClick={!isLoading ? handleClick : null}>
@@ -118,7 +118,7 @@ const AdminTurnos = () => {
           </Col>
         </Row>
       </Container>
-      <Container fluid="true" className="px-5">
+      <Container fluid="true" className="card p-4 bg-light bg-opacity-75">
         <div className="d-flex justify-content-between align-items-center mt-5">
           <h1 className="display-4 ">Administrador de turnos</h1>
         </div>

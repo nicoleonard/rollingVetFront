@@ -54,7 +54,7 @@ const EditarTurno = () => {
             "success"
           );
           reset();
-          navegacion("/admin-turnos")
+          navegacion("/admin-turnos");
 
         } else {
           Swal.fire(

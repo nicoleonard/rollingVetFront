@@ -49,8 +49,14 @@ const Login = ({setUsuarioLogeado}) => {
                 })
                 if (respuesta.tipo === "admin") {
                     navegacion("/admin-turnos")
+                    return
                 } else {
+                  if(respuesta.tipo === "usuario"){
+                    navegacion("/reserva-turnos")
+                    return
+                  }
                     navegacion("/")
+
                 }
 
             } else {

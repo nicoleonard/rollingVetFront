@@ -57,6 +57,7 @@ const AgregarTurno = () => {
         reset();
         if(usuarioLogeado.tipo === "usuario"){
           navegacion("/reserva-turnos");
+          return
         }
         navegacion("/admin-turnos")
       } else {

@@ -20,7 +20,7 @@ const AdminUsuarios = () => {
   }, []);
 
   return (
-    <Container fluid="true" className="px-5">
+    <Container fluid="true" className="my-4 w-100 mx-auto text-center card p-4 bg-light bg-opacity-75 min-vh-100">
       <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4 ">Lista de usuarios</h1>
       </div>
