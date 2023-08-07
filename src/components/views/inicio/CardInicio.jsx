@@ -1,6 +1,7 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from "react-router-dom";
 
 function CardInicio({ titulo, contenido, imagen }) {
     return (
@@ -9,7 +10,7 @@ function CardInicio({ titulo, contenido, imagen }) {
         <Card.Body className="contenedor-recuadro fondoVerdeOscuro">
           <Card.Title><div className="textoAntiqueWhite text-decoration-underline">{titulo}</div></Card.Title>
           <Card.Text className="textoAntiqueWhite">{contenido}</Card.Text>
-          <Button variant="success">Precio y variedades</Button>
+          <Button as={Link} to="/error404" variant="success">Precio y variedades</Button>
         </Card.Body>
       </Card>
     );

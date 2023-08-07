@@ -1,5 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 const Contacto = () => {
   return (
 
@@ -19,7 +20,7 @@ const Contacto = () => {
         <Form.Label>Escribe tu consulta aquí</Form.Label>
         <Form.Control as="textarea" placeholder="Quería saber acerca de las vacunas para perros." rows={3} />
       </Form.Group>
-      <Button variant="success" className='mb-3'>Enviar</Button>
+      <Button as={Link} to="/error404" variant="success" className='mb-3'>Enviar</Button>
     </Form>
   );
 };
