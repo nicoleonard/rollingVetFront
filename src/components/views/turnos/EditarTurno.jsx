@@ -1,7 +1,7 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { actualizarTurno, leerTurno } from "../../helpers/queriesTurnos";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { leerServicios } from "../../helpers/queriesServicios";
@@ -17,8 +17,10 @@ const EditarTurno = () => {
       setValue,
       reset,
     } = useForm();
+
     const { id } = useParams();
-  
+    const navegacion = useNavigate();
+
     useEffect(() => {
       leerTurno(id).then((respuesta) => {
         setValue('hora', respuesta.hora)
@@ -52,6 +54,8 @@ const EditarTurno = () => {
             "success"
           );
           reset();
+          navegacion("/admin-turnos")
+
         } else {
           Swal.fire(
             "Oops... algo salio mal",
@@ -63,8 +67,8 @@ const EditarTurno = () => {
     };
   
     return (
-      <Container>
-        <h1 className="display-4 mt-5">Nuevo turno</h1>
+      <Container className="card ms-auto my-4 p-4 bg-light bg-opacity-75">
+        <h1 className="display-4 mt-5">Editar turno</h1>
         <hr />
         <Form onSubmit={handleSubmit(onSubmit)}>
   
@@ -162,7 +166,7 @@ const EditarTurno = () => {
             </Form.Text>
           </Form.Group>
   
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" className="my-3">
             Guardar
           </Button>
         </Form>

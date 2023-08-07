@@ -19,8 +19,8 @@ const Registro = () => {
     };
 
     return (
-        <Container>
-            <h1 className="display-4 mt-5">Registro de usuario</h1>
+        <Container className="card ms-auto my-4 p-4 bg-light bg-opacity-75">
+            <h1 className="display-4 mt-3">Registro de usuario</h1>
             <hr />
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group className="mb-3">

@@ -25,12 +25,12 @@ const UsuariosTurnos = () => {
         <>
 
             <Container className="card m-4 w-100 align-self-center text-center bg-light bg-opacity-75">
-                <h1 className='text-center'>Lista de reservas de turnos</h1>
+                <h1 className='text-center pt-3'>Lista de reservas de turnos</h1>
                 <hr></hr>
                 <Row>
                     <Col className=' px-1 text-center'>
                         <h2>Veterinario 1</h2>
-                        <hr />
+                        <hr></hr>
                         {
                             turnos.map((turno) => {
                                 if (turno.veterinario === veterinarios[0]) {

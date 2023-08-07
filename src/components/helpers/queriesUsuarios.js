@@ -32,8 +32,7 @@ export const leerUsuarios = async () => {
       usuario.tipo = "usuario";
       const respuesta = await fetch(URL_usuarios + "/usuarios/", {
         method: "POST",
-        headers: { "Content-Type": "application/json",
-          "x-token": JSON.parse(sessionStorage.getItem('usuario')).token},
+        headers: { "Content-Type": "application/json"},
         body: JSON.stringify(usuario),
       });
       return { status: respuesta.status, contenido: await respuesta.json()}

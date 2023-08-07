@@ -84,14 +84,14 @@ const AdminTurnos = () => {
 
   return (
     <>
+
+      <Container className="my-4 w-100 mx-auto text-center card p-4 bg-light bg-opacity-75">
       <h1 className='text-center'>Lista de reservas de turnos</h1>
       <hr></hr>
-      <Container className="mx-4 w-100 align-self-center text-center">
-
-          <Button variant="danger" disabled={isLoading} onClick={!isLoading ? handleClick : null}>
+          <Button className="my-2" variant="danger" disabled={isLoading} onClick={!isLoading ? handleClick : null}>
             {isLoading ? 'Procesando…' : 'Inicializar Turnos'}
           </Button>
-
+          <hr></hr>
         <Row>
           <Col className=' px-1 text-center'>
             <h2>Veterinario 1</h2>

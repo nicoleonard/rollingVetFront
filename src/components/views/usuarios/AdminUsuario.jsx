@@ -10,7 +10,7 @@ const AdminUsuario = ({ usuario, setUsuarios }) => {
       text: "No hay vuelta atras!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#117700",
+      confirmButtonColor: "#2b9f89",
       cancelButtonColor: "#ff2255",
       confirmButtonText: "Si, borrar",
     }).then((result) => {
