@@ -20,8 +20,8 @@ const AgregarServicio = () => {
     };
 
     return (
-        <Container>
-            <h1 className="display-4 mt-5">Nuevo servicio</h1>
+        <Container className="my-4 w-100 mx-auto card bg-opacity-75 bg-light px-5 mainSection">
+            <h1 className="display-4 mt-5 text-center">Nuevo servicio</h1>
             <hr />
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group className="mb-3">
@@ -71,7 +71,7 @@ const AgregarServicio = () => {
                         {errors.precio?.message}
                     </Form.Text>
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" className="my-3">
                     Guardar
                 </Button>
             </Form>
