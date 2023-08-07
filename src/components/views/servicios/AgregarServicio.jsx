@@ -2,16 +2,19 @@ import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { agregarServicio } from "../../helpers/queriesServicios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 
 const AgregarServicio = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const navegacion = useNavigate()
 
     const onSubmit = (nuevoServicio) => {
         agregarServicio(nuevoServicio).then((respuesta) => {
             if (respuesta && respuesta.status === 201) {
                 Swal.fire('Operacion exitosa', `Se ha creado el servicio ${nuevoServicio.titulo}`, 'success');
                 reset();
+                navegacion("/admin-servicios")
             } else {
                 Swal.fire('Oops... algo salio mal', `${nuevoServicio.titulo} no pudo ser agregado como un nuevo servicio, quizás luego`, 'error');
             }

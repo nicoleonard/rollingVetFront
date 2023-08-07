@@ -12,9 +12,9 @@ const AgregarPaciente = () => {
     formState: { errors },
     reset,
   } = useForm();
+  const navegacion = useNavigate();
 
   const onSubmit = (Nuevo) => {
-  const navegacion = useNavigate();
     crearPaciente(Nuevo).then((respuesta) => {
       if (respuesta && respuesta.status === 201) {
         Swal.fire('Paciente creado', `El paciente ${Nuevo.nombreMascota} fue creado correctamente`, 'success');
