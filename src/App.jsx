@@ -9,10 +9,12 @@ import Error404 from "./components/views/Error404";
 import Footer from "./components/common/Footer";
 import { useState } from "react";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasUsuario from "./components/routes/RutasUsuario"
 import RutasAdminPacientes from "./components/routes/RutasAdminPacientes";
 import RutasAdminTurnos from "./components/routes/RutasAdminTurnos";
 import RutasAdminUsuarios from "./components/routes/RutasAdminUsuarios";
 import RutasAdminServicios from "./components/routes/RutasAdminServicios";
+import RutasUsuarioTurnos from "./components/routes/RutasUsuarioTurnos";
 
 function App() {
   const [usuarioLogeado, setUsuarioLogeado] = useState(
@@ -67,6 +69,15 @@ function App() {
             <RutasProtegidas>
               <RutasAdminServicios></RutasAdminServicios>
             </RutasProtegidas>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/reserva-turnos/*"
+          element={
+            <RutasUsuario>
+              <RutasUsuarioTurnos></RutasUsuarioTurnos>
+            </RutasUsuario>
           }
         ></Route>
         <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
