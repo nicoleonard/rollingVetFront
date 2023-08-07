@@ -9,7 +9,7 @@ import"../../../App.css"
 function Profesionales() {
     return (
 <section className="container nuestrosEspecialistas mb-3">
-        <h2 className="mb-3">Nuestros Especialistas siempre a disposición</h2>
+        <h2 className="mb-3 textoAntiqueWhite display-6">Nuestros Especialistas siempre a disposición</h2>
         <article className="galeria-nuestrosEspecialistas">
           <img src={prof1} alt="Cecilia Herrera" />
           <img src={prof2} alt="Ricardo Haro"/>

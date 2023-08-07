@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 
 const PlanesInicio = () => {
   return (
-    <Container className="textoAntiqueWhite text-center my-3">
-      <h2 className="display-5">Elige una de nuestras membresías</h2>
-      <h3>La mejor atención para tu mascota</h3>
-      <Container>
+    <Container className="text-center my-2 w-100 mx-auto card bg-opacity-75 bg-success px-5">
+      <h2 className="display-5 textoAntiqueWhite mt-3">Elige una de nuestras membresías</h2>
+      <h3 className="textoAntiqueWhite">La mejor atención para tu mascota</h3>
+      <hr />
+      <Container className="my-5">
         <Row>
           <Col>
             <Card style={{ width: "18rem" }}>
