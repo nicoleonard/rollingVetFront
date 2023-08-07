@@ -41,7 +41,9 @@ export const obtenerPacientes = async () => {
     try {
       const respuesta = await fetch(URL_pacientes + "/" + id, {
         method: "DELETE",
-        
+        headers: {
+          "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
+        },
       });
       return respuesta;
     } catch (error) {

@@ -32,7 +32,8 @@ export const leerUsuarios = async () => {
       usuario.tipo = "usuario";
       const respuesta = await fetch(URL_usuarios + "/usuarios/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json",
+          "x-token": JSON.parse(sessionStorage.getItem('usuario')).token},
         body: JSON.stringify(usuario),
       });
       return { status: respuesta.status, contenido: await respuesta.json()}
@@ -45,6 +46,9 @@ export const leerUsuarios = async () => {
     try {
       const respuesta = await fetch(URL_usuarios + "/usuarios/" + id, {
         method: "DELETE",
+        headers: {
+          "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
+        },
       });
       return { status: respuesta.status, contenido: await respuesta.json()};
     } catch (error) {
