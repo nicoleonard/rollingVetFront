@@ -4,13 +4,13 @@ import "../../App.css";
 
 const Error404 = () => {
   return (
-      <Container className="mainSection min-vh-100 fondo" >
+      <section className="container-fluid mainSection fondo fondoSinImagen" >
       <div className="mb-2 btnCentrado pt-2">
         <Button href="/" variant='primary' size="lg">
           Volver
         </Button>
       </div>
-      </Container>
+      </section>
   );
 };
 

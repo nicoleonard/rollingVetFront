@@ -48,8 +48,12 @@ a {
     position: relative;
     background-size: cover;
     background-position: center;
-    background: #2b9f89;
+    min-height: 100vh;
     background-image: url('../src/assets/Error.png');
+  }
+
+  .fondo .fondoSinImagen{
+    background: #2b9f89; 
   }
 
 .reviewClientes {
