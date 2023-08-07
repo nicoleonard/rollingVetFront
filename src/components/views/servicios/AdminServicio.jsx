@@ -47,7 +47,7 @@ const AdminServicio = ({ servicio, setServicios }) => {
             <td>{servicio.descripcion}</td>
             <td>{servicio.precio}</td>
             <td className="d-flex flex-columns flex-wrap justify-content-center">
-                <Link className="btn btn-warning w-75" to={'/admin-servicios/editar-servicio/' + servicio._id}>Editar</Link>
+                <Link className="btn btn-success w-75" to={'/admin-servicios/editar-servicio/' + servicio._id}>Editar</Link>
                 <Button className="w-75" variant="danger" onClick={eliminarServicio}>
                     Borrar
                 </Button>

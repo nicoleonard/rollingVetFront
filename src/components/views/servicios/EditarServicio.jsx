@@ -32,7 +32,7 @@ const EditarServicio = () => {
     };
 
     return (
-        <Container>
+        <Container className="my-4 w-100 mx-auto card bg-opacity-75 bg-light px-5 mainSection">
             <h1 className="display-4 mt-5">Editando servicio</h1>
             <hr />
             <Form onSubmit={handleSubmit(onSubmit)}>
@@ -83,7 +83,7 @@ const EditarServicio = () => {
                         {errors.precio?.message}
                     </Form.Text>
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" className="my-3">
                     Guardar
                 </Button>
             </Form>
