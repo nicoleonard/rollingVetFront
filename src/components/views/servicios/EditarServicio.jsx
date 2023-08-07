@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { editarServicio, leerServicio } from "../../helpers/queriesServicios";
 import Swal from "sweetalert2";
 
@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 const EditarServicio = () => {
     const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm();
     const { id } = useParams();
-
+    const navegacion = useNavigate();
     useEffect(() => {
         leerServicio(id).then((respuesta) => {
             setValue('titulo', respuesta.titulo)
@@ -24,6 +24,7 @@ const EditarServicio = () => {
             if (respuesta && respuesta.status === 200) {
                 Swal.fire('Servicio editado', `El servicio de ${servicioEditado.titulo} fue modificado con exito`, 'success');
                 reset();
+                navegacion("/admin-servicios")
             } else {
                 Swal.fire('Oops... algo salio mal', `El servicio de ${servicioEditado.titulo} no se modificó. Quizás luego`, 'error');
             }

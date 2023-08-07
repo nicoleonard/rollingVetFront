@@ -2,15 +2,18 @@ import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { agregarUsuario } from "../helpers/queriesUsuarios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Registro = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const navegacion = useNavigate()
 
     const onSubmit = (nuevoUsuario) => {
         agregarUsuario(nuevoUsuario).then((respuesta) => {
             if (respuesta && respuesta.status === 201) {
                 Swal.fire(`${respuesta.contenido.mensaje}`, `La cuenta ${nuevoUsuario.usuario} fue agregada al Registro de usuarios`, 'success');
                 reset();
+                navegacion("/login")
             } else {
                 Swal.fire(`${respuesta.contenido.mensaje}`, `La cuenta ${nuevoUsuario.usuario} no pudo ser creada, quizás luego`, 'error');
             }
