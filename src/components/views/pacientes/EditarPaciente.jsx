@@ -1,6 +1,6 @@
 import { Form, Button, Row, Card, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { editarPaciente, obtenerUnPaciente } from "../../helpers/queriesPacientes";
 import Swal from "sweetalert2";
@@ -15,6 +15,7 @@ const EditarPaciente = () => {
     setValue
   } = useForm();
   const {id} = useParams();
+  const navegacion = useNavigate();
 
   useEffect(()=>{
     obtenerUnPaciente(id).then((respuesta)=>{
@@ -33,6 +34,7 @@ const EditarPaciente = () => {
       if (respuesta && respuesta.status === 200) {
         Swal.fire('Paciente editado', `El paciente ${Nuevo.nombreMascota} fue editado correctamente`, 'success');
         reset();
+        navegacion("/admin-pacientes")
       } else {
         Swal.fire('Ocurrio un error', `El paciente ${Nuevo.nombreMascota} no pudo ser editado, intente en unos minutos`, 'error');
       }
@@ -40,7 +42,7 @@ const EditarPaciente = () => {
   };
 
   return (
-    <section className="container mainSection">
+    <section className="container card my-4 p-4 bg-light bg-opacity-75 min-vh-100">
       <h1 className="display-4 mt-5">Editar paciente</h1>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)}>

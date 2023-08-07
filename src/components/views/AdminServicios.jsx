@@ -20,7 +20,7 @@ const AdminServicios = () => {
     }, [])
 
     return (
-        <Container fluid="true" className="px-5">
+        <Container fluid="true" className="my-4 w-100 text-center mx-auto card bg-opacity-75 bg-light px-5 mainSection">
             <div className="d-flex justify-content-between align-items-center mt-5">
                 <h1 className="display-4 ">Administrador de servicios</h1>
                 <Link className="btn btn-primary" to='/admin-servicios/agregar-servicio'>

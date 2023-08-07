@@ -2,6 +2,8 @@ import { Form, Button, Row, Card, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearPaciente } from "../../helpers/queriesPacientes";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+
 
 const AgregarPaciente = () => {
   const {
@@ -12,11 +14,12 @@ const AgregarPaciente = () => {
   } = useForm();
 
   const onSubmit = (Nuevo) => {
-
+  const navegacion = useNavigate();
     crearPaciente(Nuevo).then((respuesta) => {
       if (respuesta && respuesta.status === 201) {
         Swal.fire('Paciente creado', `El paciente ${Nuevo.nombreMascota} fue creado correctamente`, 'success');
         reset();
+        navegacion("/admin-pacientes")
       } else {
         Swal.fire('Ocurrio un error', `El paciente ${Nuevo.nombreMascota} no pudo ser creado, intente en unos minutos`, 'error');
       }
@@ -24,7 +27,7 @@ const AgregarPaciente = () => {
   };
 
   return (
-    <section className="container mainSection">
+    <section className="container card my-4 p-4 bg-light bg-opacity-75 min-vh-100">
       <h1 className="display-4 mt-5">Nuevo paciente</h1>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)}>

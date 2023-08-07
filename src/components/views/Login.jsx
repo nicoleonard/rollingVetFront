@@ -18,7 +18,7 @@ const Login = ({setUsuarioLogeado}) => {
             text: `Está logeado como ${usuario.usuario}. Desea cerrar sesion?`,
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#117700',
+            confirmButtonColor: '#2b9f89',
             cancelButtonColor: '#ff2255',
             confirmButtonText: 'Si, cerrar sesion.'
         }).then((result) => {
@@ -40,22 +40,33 @@ const Login = ({setUsuarioLogeado}) => {
             if (respuesta.usuario) {
                 sessionStorage.setItem('usuario', JSON.stringify(respuesta))
                 setUsuarioLogeado(respuesta);
-                Swal.fire(
-                    `${respuesta.mensaje}`, `Bienvenido, ${respuesta.usuario}`,
-                    'success'
-                )
+                Swal.fire({
+                  title: `${respuesta.mensaje}`,
+                  text: `Bienvenido, ${respuesta.usuario}`,
+                  icon: 'success',
+                  confirmButtonColor: '#2b9f89',
+                  confirmButtonText: 'Ok'
+                })
                 if (respuesta.tipo === "admin") {
                     navegacion("/admin-turnos")
+                    return
                 } else {
+                  if(respuesta.tipo === "usuario"){
+                    navegacion("/reserva-turnos")
+                    return
+                  }
                     navegacion("/")
+
                 }
 
             } else {
-                Swal.fire(
-                    'Algo salio mal...',
-                    `${respuesta.mensaje}`,
-                    'error'
-                )
+                Swal.fire({
+                    title: 'Algo salio mal...',
+                    text: `${respuesta.mensaje}`,
+                    icon: 'error',
+                    confirmButtonColor: '#2b9f89',
+                    confirmButtonText: 'Ok'
+                  })
             }
         });
     }
@@ -65,8 +76,8 @@ const Login = ({setUsuarioLogeado}) => {
 
   return (
     <Container className="mainSection">
-      <Card className="my-5">
-        <Card.Header as="h5">Login</Card.Header>
+      <Card className="card ms-auto my-4 p-4 bg-light bg-opacity-75">
+        <Card.Header className="display-4 mt-3" as="h1">Login</Card.Header>
         <Card.Body>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">

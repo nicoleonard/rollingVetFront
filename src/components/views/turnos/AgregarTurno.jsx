@@ -1,7 +1,7 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { actualizarTurno, leerTurno } from "../../helpers/queriesTurnos";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { leerServicios } from "../../helpers/queriesServicios";
@@ -17,7 +17,13 @@ const AgregarTurno = () => {
     setValue,
     reset,
   } = useForm();
+
+  const [usuarioLogeado] = useState(
+    JSON.parse(sessionStorage.getItem("usuario")) || {}
+  );
+
   const { id } = useParams();
+  const navegacion = useNavigate()
 
   useEffect(() => {
     const fechaActual = new Date()
@@ -49,6 +55,11 @@ const AgregarTurno = () => {
           "success"
         );
         reset();
+        if(usuarioLogeado.tipo === "usuario"){
+          navegacion("/reserva-turnos");
+          return
+        }
+        navegacion("/admin-turnos")
       } else {
         Swal.fire(
           "Oops... algo salio mal",

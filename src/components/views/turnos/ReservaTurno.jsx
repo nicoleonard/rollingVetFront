@@ -50,7 +50,7 @@ const ReservaTurno = ({ turno, setTurnos }) => {
             return (
                 <>
                     <Card className="px-0 mb-1">
-                        <Link className="btn btn-primary" to={'/admin-turnos/agregar-turno/' + turno._id}>
+                        <Link className="btn btn-success" to={'/admin-turnos/agregar-turno/' + turno._id}>
                             Reserva HS {turno.hora}
                         </Link>
                     </Card>
@@ -60,7 +60,7 @@ const ReservaTurno = ({ turno, setTurnos }) => {
             return (
                 <>
                     <Card className="px-0 mb-1">
-                        <Link className="btn btn-primary" to={'/reserva-turnos/agregar-turno/' + turno._id}>
+                        <Link className="btn btn-success" to={'/reserva-turnos/agregar-turno/' + turno._id}>
                             Reserva HS {turno.hora}
                         </Link>
                     </Card>
