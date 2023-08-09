@@ -76,6 +76,7 @@ const EditarTurno = () => {
             <Form.Label>Horario</Form.Label>
             <Form.Control type="time"
               readOnly
+              disabled
               {...register("hora", {
                 required: "La hora del turno no puede estar vacia",
               })}>
@@ -89,6 +90,7 @@ const EditarTurno = () => {
             <Form.Label>Veterinario</Form.Label>
             <Form.Control type="string"
               readOnly
+              disabled
               {...register("veterinario", {
                 required: "El campo de veterinario no puede estar vacio",
               })}>
@@ -102,6 +104,7 @@ const EditarTurno = () => {
             <Form.Label>Usuario</Form.Label>
             <Form.Control type="string"
                 readOnly
+                disabled
               {...register("usuario", {
                 required: "El campo de usuario no puede estar vacio",
               })}>
@@ -114,7 +117,6 @@ const EditarTurno = () => {
           <Form.Group className="mb-3">
             <Form.Label>Paciente</Form.Label>
             <Form.Control type="string"
-                readOnly
               {...register("paciente", {
                 required: "El campo de paciente no puede estar vacio",
               })}>
@@ -128,6 +130,7 @@ const EditarTurno = () => {
             <Form.Label>Fecha</Form.Label>
             <Form.Control type="Date"
               readOnly
+              disabled
               {...register("fecha", {
                 required: "La fecha del turno no puede estar vacia",
               })}>
