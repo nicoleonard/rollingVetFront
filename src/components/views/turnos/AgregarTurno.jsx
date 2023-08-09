@@ -80,6 +80,7 @@ const AgregarTurno = () => {
           <Form.Label>Horario</Form.Label>
           <Form.Control type="time"
             readOnly
+            disabled
             {...register("hora", {
               required: "La hora del turno no puede estar vacia",
             })}>
@@ -93,6 +94,7 @@ const AgregarTurno = () => {
           <Form.Label>Veterinario</Form.Label>
           <Form.Control type="string"
             readOnly
+            disabled
             {...register("veterinario", {
               required: "El campo de veterinario no puede estar vacio",
             })}>
@@ -132,6 +134,7 @@ const AgregarTurno = () => {
           <Form.Label>Fecha</Form.Label>
           <Form.Control type="Date"
             readOnly
+            disabled
             {...register("fecha", {
               required: "La fecha del turno no puede estar vacia",
             })}>
@@ -142,7 +145,7 @@ const AgregarTurno = () => {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Detalles de la cita</Form.Label>
+        <Form.Label>Detalles de la cita</Form.Label>
           <Form.Control type="text"
             {...register("detalleCita", {
               required: "La fecha del turno no puede estar vacia",
@@ -154,11 +157,11 @@ const AgregarTurno = () => {
         </Form.Group>
 
         <Form.Group>
+        <Form.Label>Seleccione un servcio de la lista</Form.Label>
           <Form.Select
             {...register("servicios", {
               required: "El campo servicios no puede estar vacio",
             })}>
-            <option>Seleccione un servcio de la lista</option>
             {
               servicios.map((servicio) => {
                 return <option key={servicio._id} value={servicio.titulo}>{servicio.titulo}</option>
