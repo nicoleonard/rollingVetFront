@@ -11,6 +11,8 @@ const AdminTurnos = () => {
   const [turnos, setTurnos] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
+  const fecha = new Date()
+  const formato = { weekday: 'long', month: 'long', day: 'numeric' };
   let hora = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"]
   const veterinarios = ["Estella Ruiz", "Ricardo Haro"]
 
@@ -86,7 +88,7 @@ const AdminTurnos = () => {
     <>
 
       <Container className="my-4 w-100 mx-auto text-center card p-4 bg-light bg-opacity-75 min-vh-100">
-        <h1 className='text-center'>Lista de reservas de turnos</h1>
+      <Container as={"h1"} className="text-center pt-3">Lista de reservas de turnos {fecha.toLocaleDateString('es-ES', formato)}</Container>
         <hr></hr>
         <Button className="my-2" variant="danger" disabled={isLoading} onClick={!isLoading ? handleClick : null}>
           {isLoading ? 'Procesando…' : 'Inicializar Turnos'}
