@@ -1,22 +1,20 @@
-import { Card } from "react-bootstrap"
+import { Card, Col } from "react-bootstrap"
 
 const ListaServicio = ({ servicio }) => {
 
     return (
         <>
-            <Card className="px-1 my-2 text-center">
+            <Card className="my-3 mx-2 p-0 text-center bg-light bg-opacity-75">
                 <Card.Header>
-                    <h4>Servicio:</h4>
-                    <p className="text-truncate">{servicio.titulo}</p>
+                    <p className="text-truncate my-0 fw-bold">{servicio.titulo}</p>
                 </Card.Header>
                 <Card.Body>
-                    <h6>Descripcion:</h6>
-                    <p className="text-wrap">{servicio.descripcion}</p>
+                    <p className="text-wrap fst-italic">{servicio.descripcion}</p>
 
                 </Card.Body>
                 <Card.Footer>
                     <h6>Precio:</h6>
-                    <p>${servicio.precio}</p>
+                    <p className="text-success fw-bold">${servicio.precio}</p>
                 </Card.Footer>
             </Card>
         </>

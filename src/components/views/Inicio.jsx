@@ -40,7 +40,7 @@ const Inicio = () => {
       <Container className="my-4 w-100 mx-auto card bg-opacity-75 bg-success px-5">
         <h1 className="display-4 textoAntiqueWhite mt-3 text-center">Nuestros Servicios</h1>
         <hr />
-        <Row className="mb-3">
+        <Row className="mb-3 justify-content-center" xs={1} md={3} lg={4} xl={5}>
           {servicios && servicios.length > 0 ? (
             servicios.map((servicio) => (
               <ListaServicio key={servicio._id} servicio={servicio} />
