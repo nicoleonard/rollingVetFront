@@ -11,8 +11,8 @@ const AdminTurnos = () => {
   const [turnos, setTurnos] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
-  let hora = ["09:00", "10:00","11:00" ,"12:00" ,"13:00" ,"14:00" ,"15:00" ,"16:00"]
-  const veterinarios = ["veterinario1", "veterinario2"]
+  let hora = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"]
+  const veterinarios = ["Estella Ruiz", "Ricardo Haro"]
 
   useEffect(() => {
     leerTurnos().then((respuesta) => {
@@ -86,15 +86,15 @@ const AdminTurnos = () => {
     <>
 
       <Container className="my-4 w-100 mx-auto text-center card p-4 bg-light bg-opacity-75 min-vh-100">
-      <h1 className='text-center'>Lista de reservas de turnos</h1>
-      <hr></hr>
-          <Button className="my-2" variant="danger" disabled={isLoading} onClick={!isLoading ? handleClick : null}>
-            {isLoading ? 'Procesando…' : 'Inicializar Turnos'}
-          </Button>
-          <hr></hr>
+        <h1 className='text-center'>Lista de reservas de turnos</h1>
+        <hr></hr>
+        <Button className="my-2" variant="danger" disabled={isLoading} onClick={!isLoading ? handleClick : null}>
+          {isLoading ? 'Procesando…' : 'Inicializar Turnos'}
+        </Button>
+        <hr></hr>
         <Row>
           <Col className=' px-1 text-center'>
-            <h2>Veterinario 1</h2>
+            <Container as={"h3"}>{veterinarios[0]}</Container>
             <hr />
             {
               turnos.map((turno) => {
@@ -106,7 +106,7 @@ const AdminTurnos = () => {
             }
           </Col>
           <Col className=' px-1 text-center'>
-            <h2>Veterinario 2</h2>
+            <Container as={"h3"}>{veterinarios[1]}</Container>
             <hr />
             {
               turnos.map((turno) => {
