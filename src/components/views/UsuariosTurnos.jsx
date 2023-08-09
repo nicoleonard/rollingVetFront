@@ -29,7 +29,7 @@ const UsuariosTurnos = () => {
                 <hr></hr>
                 <Row>
                     <Col className=' px-1 text-center'>
-                        <h2>Veterinario 1</h2>
+                        <Container as={"h3"}>{veterinarios[0]}</Container>
                         <hr></hr>
                         {
                             turnos.map((turno) => {
@@ -41,7 +41,7 @@ const UsuariosTurnos = () => {
                         }
                     </Col>
                     <Col className=' px-1 text-center'>
-                        <h2>Veterinario 2</h2>
+                        <Container as={"h3"}>{veterinarios[1]}</Container>
                         <hr />
                         {
                             turnos.map((turno) => {
