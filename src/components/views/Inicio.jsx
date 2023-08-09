@@ -7,7 +7,7 @@ import ReviewClientes from "./inicio/ReviewClientes";
 import DatosCards from "./inicio/DatosCards.jsx"
 import CardInicio from "./inicio/CardInicio";
 import Profesionales from "./inicio/Profesionales";
-import PlanesInicio from "./inicio/planesInicio";
+import PlanesInicio from "./inicio/PlanesInicio";
 
 const Inicio = () => {
   const [servicios, setServicios] = useState([]);
