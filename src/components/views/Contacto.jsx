@@ -39,8 +39,10 @@ const Contacto = () => {
       </Form.Group>
       <Form.Group className="mb-3" controlId="Form.ControlInput1">
         <Form.Label>Correo electrónico</Form.Label>
-        <Form.Control type="email" placeholder="nombre@ejemplo.com."
-        {...register("email", {
+        <Form.Control
+          type="email"
+          placeholder="nombre@ejemplo.com."
+          {...register("email", {
             required: "El email es un campo obligatorio.",
             minLength: {
               value: 5,
@@ -51,9 +53,11 @@ const Contacto = () => {
               message: "La cantidad máxima de caracteres es 256.",
             },
             pattern: {
-              value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-              message: "El email debe tener un formato valido (mail@dominio.com)."
-            } 
+              value:
+                /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+              message:
+                "El email debe tener un formato valido (mail@dominio.com).",
+            },
           })}
         />
         <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
@@ -76,7 +80,9 @@ const Contacto = () => {
             },
           })}
         />
-        <Form.Text className="text-danger">{errors.consulta?.message}</Form.Text>
+        <Form.Text className="text-danger">
+          {errors.consulta?.message}
+        </Form.Text>
       </Form.Group>
       <Button variant="success" type="submit" className="mb-3">
         Enviar
