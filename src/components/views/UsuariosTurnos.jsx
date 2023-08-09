@@ -7,7 +7,7 @@ import { leerTurnos } from "../helpers/queriesTurnos";
 const UsuariosTurnos = () => {
     const [turnos, setTurnos] = useState([])
 
-    const veterinarios = ["veterinario1", "veterinario2"]
+    const veterinarios = ["Estella Ruiz", "Ricardo Haro"]
 
     useEffect(() => {
         leerTurnos().then((respuesta) => {
