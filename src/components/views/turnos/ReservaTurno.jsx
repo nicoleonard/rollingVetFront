@@ -11,7 +11,6 @@ const ReservaTurno = ({ turno, setTurnos }) => {
     const [usuarioLogeado] = useState(
         JSON.parse(sessionStorage.getItem("usuario")) || {}
     );
-
     const liberarTurno = () => {
         Swal.fire({
             title: 'Elimina la reserva del turno, esta seguro?',
@@ -23,15 +22,18 @@ const ReservaTurno = ({ turno, setTurnos }) => {
             confirmButtonText: 'Si, eliminar reserva'
         }).then((result) => {
             if (result.isConfirmed) {
-                inicializarTurno(turno._id).then((respuesta) => {
+                inicializarTurno(turno._id, turno).then((respuesta) => {
                     if (respuesta && respuesta.status === 200) {
                         Swal.fire(
                             `${respuesta.contenido.mensaje}`,
-                            `Fecha: ${turno.fecha} Hora: ${turno.hora} se ha liberado`,
+                            `Fecha: ${turno.fecha.slice(0, 5)} Hora: ${turno.hora} se ha liberado`,
                             'success'
                         )
                         leerTurnos().then((respuesta) => {
-                            setTurnos(respuesta);
+                            let turnosDia = respuesta.filter((turnoFiltro) => {
+                                return turno.fecha === turnoFiltro.fecha
+                            })
+                            setTurnos(turnosDia);
                         });
                     } else {
                         Swal.fire(
@@ -46,22 +48,22 @@ const ReservaTurno = ({ turno, setTurnos }) => {
         })
     }
     if (turno.turnoLibre) {
-        if(usuarioLogeado.tipo === "admin"){
+        if (usuarioLogeado.tipo === "admin") {
             return (
                 <>
                     <Card className="px-0 mb-1">
                         <Link className="btn btn-success" to={'/admin-turnos/agregar-turno/' + turno._id}>
-                            Reserva HS {turno.hora}
+                            Reserva HS - {turno.hora} - Fecha - {turno.fecha.slice(0, 5)}
                         </Link>
                     </Card>
                 </>
             )
-        }else{
+        } else {
             return (
                 <>
                     <Card className="px-0 mb-1">
                         <Link className="btn btn-success" to={'/reserva-turnos/agregar-turno/' + turno._id}>
-                            Reserva HS {turno.hora}
+                            Reserva HS - {turno.hora} - Fecha - {turno.fecha.slice(0, 5)}
                         </Link>
                     </Card>
                 </>
@@ -91,7 +93,7 @@ const ReservaTurno = ({ turno, setTurnos }) => {
                             <Row className="p-0 w-75 mx-auto">
                                 <Col className="px-0">
                                     <ListGroup className="list-group-flush text-center">
-                                        <ListGroup.Item className="p-0">{turno.fecha}</ListGroup.Item>
+                                        <ListGroup.Item className="p-0">{turno.fecha.slice(0, 5)}</ListGroup.Item>
                                         <ListGroup.Item className="p-0">{turno.hora}</ListGroup.Item>
                                     </ListGroup>
                                 </Col>

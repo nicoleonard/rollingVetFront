@@ -35,11 +35,12 @@ export const actualizarTurno = async (turno, id) => {
   }
 };
 
-export const inicializarTurno = async (id) => {
+export const inicializarTurno = async (id,turno) => {
   try {
     const respuesta = await fetch(URL_turnos + "/" + id, { method: "PUT",
       headers: { "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
     },
+        body: JSON.stringify(turno),
   });
     return { status: respuesta.status, contenido: await respuesta.json() };
   } catch (error) {
