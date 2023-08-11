@@ -28,9 +28,9 @@ a {
   margin: 0 auto;
 }
 .btnCentrado {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  bottom: 0;
+  left: 50%;
+  position: fixed;
 }
 .btnCentrado .btn {
   background-color: #40b19a;
