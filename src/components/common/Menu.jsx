@@ -49,8 +49,8 @@ const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
             }
             {
               (!usuarioLogeado.usuario) ?
-                <NavLink end to="/login" className={'nav-item nav-link'}>Login</NavLink> :
-                <Link className={'nav-item nav-link'} onClick={logout}>Logout</Link>
+                <NavLink end to="/login" className={'nav-item nav-link'}>Iniciar sesión</NavLink> :
+                <Link className={'nav-item nav-link'} onClick={logout}>Cerrar sesión</Link>
             }
           </Nav>
         </Navbar.Collapse>
