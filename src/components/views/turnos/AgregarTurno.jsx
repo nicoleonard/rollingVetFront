@@ -24,15 +24,16 @@ const AgregarTurno = () => {
 
   const { id } = useParams();
   const navegacion = useNavigate()
-
+ 
   useEffect(() => {
-    const fechaActual = new Date()
+
     leerTurno(id).then((respuesta) => {
+
       setValue('hora', respuesta.hora)
       setValue('veterinario', respuesta.veterinario)
-      setValue('fecha', fechaActual.toLocaleDateString("en-CA", { year: 'numeric', month: '2-digit', day: '2-digit' }))
+      setValue('fecha', respuesta.fecha)
     })
-
+    
   }, [])
 
   useEffect(() => {
@@ -55,7 +56,7 @@ const AgregarTurno = () => {
           "success"
         );
         reset();
-        if(usuarioLogeado.tipo === "usuario"){
+        if (usuarioLogeado.tipo === "usuario") {
           navegacion("/reserva-turnos");
           return
         }
@@ -132,12 +133,10 @@ const AgregarTurno = () => {
 
         <Form.Group className="mb-3">
           <Form.Label>Fecha</Form.Label>
-          <Form.Control type="Date"
+          <Form.Control type="string"
             readOnly
             disabled
-            {...register("fecha", {
-              required: "La fecha del turno no puede estar vacia",
-            })}>
+            {...register("fecha")}>
           </Form.Control>
           <Form.Text className="text-danger">
             {errors.fecha?.message}
@@ -145,10 +144,10 @@ const AgregarTurno = () => {
         </Form.Group>
 
         <Form.Group className="mb-3">
-        <Form.Label>Detalles de la cita</Form.Label>
+          <Form.Label>Detalles de la cita</Form.Label>
           <Form.Control type="text"
             {...register("detalleCita", {
-              required: "La fecha del turno no puede estar vacia",
+              required: "Los detalles de la cita no pueden quedar en blanco",
             })}>
           </Form.Control>
           <Form.Text className="text-danger">
@@ -157,7 +156,7 @@ const AgregarTurno = () => {
         </Form.Group>
 
         <Form.Group>
-        <Form.Label>Seleccione un servcio de la lista</Form.Label>
+          <Form.Label>Seleccione un servcio de la lista</Form.Label>
           <Form.Select
             {...register("servicios", {
               required: "El campo servicios no puede estar vacio",

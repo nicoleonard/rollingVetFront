@@ -127,18 +127,16 @@ const EditarTurno = () => {
           </Form.Group>
   
           <Form.Group className="mb-3">
-            <Form.Label>Fecha</Form.Label>
-            <Form.Control type="Date"
-              readOnly
-              disabled
-              {...register("fecha", {
-                required: "La fecha del turno no puede estar vacia",
-              })}>
-            </Form.Control>
-            <Form.Text className="text-danger">
-              {errors.fecha?.message}
-            </Form.Text>
-          </Form.Group>
+          <Form.Label>Fecha</Form.Label>
+          <Form.Control type="string"
+            readOnly
+            disabled
+            {...register("fecha")}>
+          </Form.Control>
+          <Form.Text className="text-danger">
+            {errors.fecha?.message}
+          </Form.Text>
+        </Form.Group>
   
           <Form.Group className="mb-3">
             <Form.Label>Detalles de la cita</Form.Label>

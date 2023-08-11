@@ -1,26 +1,44 @@
 import { useEffect, useState } from "react";
 import ReservaTurno from "./turnos/ReservaTurno"
-import { Container, Col, Row } from "react-bootstrap";
+import { Container, Col, Row, Dropdown, DropdownButton } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { leerTurnos } from "../helpers/queriesTurnos";
 
 const UsuariosTurnos = () => {
+    const formato = { year: 'numeric', month: '2-digit', day: '2-digit' };
+
     const [turnos, setTurnos] = useState([])
-    const fecha = new Date()
-    const formato = { weekday: 'long', month: 'long', day: 'numeric' };
+    const [fechas, setFechas] = useState([]);
+    const [fecha, setFecha] = useState(new Date().toLocaleDateString('es-ar', formato));
+
     const veterinarios = ["Estella Ruiz", "Ricardo Haro"]
 
     useEffect(() => {
         leerTurnos().then((respuesta) => {
             if (respuesta) {
                 respuesta.sort((a, b) => a.hora - b.hora)
-                setTurnos(respuesta)
+                let fechaInicial = respuesta[0].fecha
+                let arrayFecha = []
+                let arrayFechas = []
+                let dia = 0
+                for (let i = 0; i <= 5; i++) {
+                    arrayFecha = fechaInicial.split("/")
+                    dia = parseInt(arrayFecha.shift(arrayFecha[0]), 10) + i
+                    arrayFecha.unshift(dia.toString())
+                    arrayFechas.push(arrayFecha.join("/"))
+                }
+                setFechas(arrayFechas)
+
+                let turnosDia = respuesta.filter((turno) => {
+                    return turno.fecha === fecha
+                })
+                setTurnos(turnosDia)
             } else {
                 Swal.fire('Oops...', 'Intente esta operacion luego', 'error')
             }
 
         })
-    }, [])
+    }, [fecha])
 
 
 
@@ -29,7 +47,15 @@ const UsuariosTurnos = () => {
 
             <Container className="card m-4 w-100 align-self-center text-center bg-light bg-opacity-75">
 
-                <Container as={"h1"} className="text-center pt-3">Lista de reservas de turnos {fecha.toLocaleDateString('es-ES', formato)}</Container>
+                <Container as={"h1"} className="justify-content-center pt-3 d-flex">Lista de reservas de turnos
+                    <DropdownButton id="dropdown-item-button" className="mx-2 align-self-center" title={fecha}>
+                        {
+                            fechas.map((fecha) => { return <Dropdown.Item key={fecha} as={"button"} onClick={() => { setFecha(fecha) }}>{fecha}</Dropdown.Item> })
+                        }
+
+
+                    </DropdownButton>
+                </Container>
 
                 <hr></hr>
                 <Row>
