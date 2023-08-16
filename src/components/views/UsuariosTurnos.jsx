@@ -32,6 +32,7 @@ const UsuariosTurnos = () => {
                 let turnosDia = respuesta.filter((turno) => {
                     return turno.fecha === fecha
                 })
+                respuesta.sort((a, b) => a.hora - b.hora)
                 setTurnos(turnosDia)
             } else {
                 Swal.fire('Oops...', 'Intente esta operacion luego', 'error')
