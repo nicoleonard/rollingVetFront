@@ -195,6 +195,7 @@ a {
     height: 60vh;
     grid-template-columns: repeat(var(--m), 1fr);
   }
+
 }
 @media screen and (max-width: 575px) {
   .slider {
@@ -202,6 +203,9 @@ a {
   }
   .galeria-nuestrosEspecialistas {
     height: 50vh;
+  }
+  .btnCentrado {
+    bottom: -5%;
   }
 }
 @media screen and (max-width: 300px) {
