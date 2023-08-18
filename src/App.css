@@ -27,11 +27,12 @@ a {
   display: block;
   margin: 0 auto;
 }
-.btnCentrado {
-  bottom: 0;
-  left: 50%;
-  position: fixed;
-}
+  .btnCentrado {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+  }
 .btnCentrado .btn {
   background-color: #40b19a;
   border: #40b19a;
@@ -196,6 +197,7 @@ a {
     height: 60vh;
     grid-template-columns: repeat(var(--m), 1fr);
   }
+
 }
 @media screen and (max-width: 575px) {
   .slider {
@@ -204,9 +206,17 @@ a {
   .galeria-nuestrosEspecialistas {
     height: 50vh;
   }
+  .btnCentrado {
+    bottom: 0;
+    transform: translateX(-50%);
+  }
 }
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 380px) {
   .galeria-nuestrosEspecialistas {
-    height: 45vh;
+    height: 45vh;}
+
+  .btnCentrado {
+    bottom: -5%;
+    transform: translateX(-50%);
   }
 }
