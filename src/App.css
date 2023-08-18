@@ -129,7 +129,6 @@ a {
     min-height: 1vh;
   }
 }
-/* Estilos para dispositivos grandes */
 @media (max-width: 768px) {
   .fondo {
     background-size: 100%;
@@ -157,6 +156,9 @@ a {
     filter: brightness(1);
     width: calc(70vh * var(--f) / var(--n));
     height: calc(80vw * var(--f) / var(--m));
+  }
+  .tamanioBoton {
+    width: 75%;
   }
 }
 @media screen and (min-width: 770px) and (max-width: 992px) {
