@@ -83,7 +83,7 @@ const ReservaTurno = ({ turno, setTurnos }) => {
                                     {turno.servicios}
                                 </Col>
                                 <Col className="text-end p-0">
-                                    <Button className="w-50 py-0" variant="danger" onClick={liberarTurno}>
+                                    <Button className="tamanioBoton" variant="danger" onClick={liberarTurno}>
                                         Borrar
                                     </Button>
                                 </Col>
