@@ -39,7 +39,7 @@ const ItemPaciente = ({ paciente, setPacientes }) => {
       <th>{paciente.raza}</th>
       <td className="text-center">
         <Link
-          className="btn btn-warning"
+          className="btn btn-success w-auto me-1"
           to={"/admin-pacientes/editar-paciente/" + paciente._id}
         >
           Editar
