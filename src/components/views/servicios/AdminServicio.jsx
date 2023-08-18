@@ -42,7 +42,7 @@ const AdminServicio = ({ servicio, setServicios }) => {
         })
     }
     return (
-        <tr>
+        <tr className="text-truncate">
             <td>{servicio.titulo}</td>
             <td>{servicio.descripcion}</td>
             <td>{servicio.precio}</td>
