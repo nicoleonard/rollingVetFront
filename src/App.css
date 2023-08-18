@@ -27,12 +27,12 @@ a {
   display: block;
   margin: 0 auto;
 }
-  .btnCentrado {
-    position: absolute;
-    left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
-  }
+.btnCentrado {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+}
 .btnCentrado .btn {
   background-color: #40b19a;
   border: #40b19a;
@@ -42,20 +42,20 @@ a {
   color: antiquewhite;
 }
 .bi {
-    color: antiquewhite;
-    font-size: 25px;
-  }
-  .fondo {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    background-image: url('../src/assets/Error.png');
-  }
+  color: antiquewhite;
+  font-size: 25px;
+}
+.fondo {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  background-image: url("../src/assets/Error.png");
+}
 
-  .fondo .fondoSinImagen{
-    background: #2b9f89; 
-  }
+.fondo .fondoSinImagen {
+  background: #2b9f89;
+}
 
 .reviewClientes {
   color: antiquewhite;
@@ -71,8 +71,8 @@ a {
   flex-direction: column;
   min-height: 100vh;
   background: #2b9f89;
-  font-family: 'Fredoka', sans-serif;
-  font-size:  20px; ;
+  font-family: "Fredoka", sans-serif;
+  font-size: 20px;
 }
 .mainSection {
   flex-grow: 1;
@@ -225,14 +225,22 @@ a {
     width: 100%;
     height: auto;
   }
+  .galeria-nuestrosEspecialistas > img:hover {
+    filter: brightness(1);
+    width: 130%;
+  }
   .btnCentrado {
     bottom: 0;
   }
 }
 @media screen and (max-width: 380px) {
   .galeria-nuestrosEspecialistas {
-    height: 45vh;}
-
+    height: 45vh;
+  }
+  .galeria-nuestrosEspecialistas > img:hover {
+    filter: brightness(1);
+    width: 130%;
+  }
   .btnCentrado {
     bottom: -5%;
   }
