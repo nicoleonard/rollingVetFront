@@ -205,11 +205,16 @@ a {
     height: 50vh;
   }
   .btnCentrado {
-    bottom: -5%;
+    bottom: 0;
+    transform: translateX(-50%);
   }
 }
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 380px) {
   .galeria-nuestrosEspecialistas {
-    height: 45vh;
+    height: 45vh;}
+
+  .btnCentrado {
+    bottom: -5%;
+    transform: translateX(-50%);
   }
 }
