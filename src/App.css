@@ -28,9 +28,10 @@ a {
   margin: 0 auto;
 }
 .btnCentrado {
-  bottom: 0;
+  position: absolute;
   left: 50%;
-  position: fixed;
+  bottom: 20px;
+  transform: translateX(-50%);
 }
 .btnCentrado .btn {
   background-color: #40b19a;
@@ -41,20 +42,20 @@ a {
   color: antiquewhite;
 }
 .bi {
-    color: antiquewhite;
-    font-size: 25px;
-  }
-  .fondo {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    background-image: url('../src/assets/Error.png');
-  }
+  color: antiquewhite;
+  font-size: 25px;
+}
+.fondo {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  background-image: url("../src/assets/Error.png");
+}
 
-  .fondo .fondoSinImagen{
-    background: #2b9f89; 
-  }
+.fondo .fondoSinImagen {
+  background: #2b9f89;
+}
 
 .reviewClientes {
   color: antiquewhite;
@@ -70,8 +71,8 @@ a {
   flex-direction: column;
   min-height: 100vh;
   background: #2b9f89;
-  font-family: 'Fredoka', sans-serif;
-  font-size:  20px; ;
+  font-family: "Fredoka", sans-serif;
+  font-size: 20px;
 }
 .mainSection {
   flex-grow: 1;
@@ -170,13 +171,20 @@ a {
     height: 60vh;
     grid-template-columns: repeat(var(--m), 1fr);
   }
+  .galeria-nuestrosEspecialistas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    height: auto;
+  }
   .galeria-nuestrosEspecialistas > img {
     filter: brightness(0.5);
+    width: 100%;
+    height: auto;
   }
-  .galeria-nuestrosEspecialistas img:hover {
+  .galeria-nuestrosEspecialistas > img:hover {
     filter: brightness(1);
-    width: calc(50vh * var(--f) / var(--n));
-    height: calc(80vw * var(--f) / var(--m));
+    width: 130%;
   }
 }
 @media screen and (min-width: 576px) and (max-width: 769px) {
@@ -188,11 +196,20 @@ a {
     transform: rotateY(calc(var(--i) * 45deg)) translateZ(250px);
   }
   .galeria-nuestrosEspecialistas {
-    --m: 3;
-    --g: 3px;
     display: grid;
-    height: 60vh;
-    grid-template-columns: repeat(var(--m), 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    height: auto;
+  }
+  .galeria-nuestrosEspecialistas > img {
+    filter: brightness(0.5);
+    width: 100%;
+    height: auto;
+    transition: width 0.3s;
+  }
+  .galeria-nuestrosEspecialistas > img:hover {
+    filter: brightness(1);
+    width: 150%;
   }
 }
 @media screen and (max-width: 575px) {
@@ -200,11 +217,34 @@ a {
     display: none;
   }
   .galeria-nuestrosEspecialistas {
-    height: 50vh;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 3px;
+    height: auto;
+  }
+  .galeria-nuestrosEspecialistas > img {
+    width: 100%;
+    height: auto;
+  }
+  .galeria-nuestrosEspecialistas > img:hover {
+    filter: brightness(1);
+    width: 130%;
+  }
+  .btnCentrado {
+    bottom: 0;
   }
 }
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 380px) {
+    .my-5 .col {
+    margin-right: 3rem; /* Ajusta este valor según sea necesario */
+  }
   .galeria-nuestrosEspecialistas {
     height: 45vh;
+  }
+  .galeria-nuestrosEspecialistas > img:hover {
+    filter: brightness(1);
+    width: 130%;
+  }
+  .btnCentrado {
+    bottom: -5%;
   }
 }
