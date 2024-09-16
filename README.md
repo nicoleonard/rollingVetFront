@@ -3,9 +3,9 @@
 <sub>HTML5 CSS3 JAVASCRIPT REACT - CRUD - FRONTEND A BACKEND</sub>
 
 Este proyecto consiste en la página web de una veterinaria llamada RollingVet. Esta veterinaria posee diferentes páginas que se ofrecen para que los posibles clientes puedan familiarizarce con los diferentes servicios que RollingVet ofrece. Además de esto, también se tiene la posibilidad de registrarse como un usuario y agendar sus propios turnos para que un veterinario pueda atender a su mascota. Los administradores de la página podrán gestionar servicios, usuarios y pacientes, que se cargan en una base de datos.
-Puedes probarlo aquí https://rolling-vet.netlify.app/
+Puedes probarlo aquí [nicodeploys-rollingvet.netlify.app](https://nicodeploys-rollingvet.netlify.app/)
 
-## Como probar el proyecto:
+## Como probar el proyecto localmente:
 Debe tener instalado en su PC mongoDB y ejecutar el siguiente comando:
 
 - npm run dev
@@ -35,4 +35,3 @@ Además, debe descargar el backend de este proyecto y ejecutar el siguiente coma
 * [Santiago Antich](https://github.com/antich98)
 * [Laura Rota](https://github.com/RLauraS)
 * [Matías Giacobbe](https://github.com/MtAgia)
-* [Facundo Cajal](https://github.com/FacundoCajal199)
